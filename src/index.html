@@ -9,18 +9,30 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Magic CSS</title>
   </head>
-  <body> 
-    <div class="container-fluid"> 
-      <div class="container"> 
-        <div class="row"> 
-          <header class="d-flex justify-content-evenly align-items-center mt-3">
-            <div class="d-flex justify-content-evenly align-items-center position-relative" id="title_section"> 
-              <h1 class="fs-1" id="heading">Magic CSS </h1><i class="fa-solid fa-hat-wizard fs-4 position-absolute" id="magic_stick"></i>
-            </div>
-            <button class="fs-2 border-0 bg-transparent" id="github"><i class="fa-brands fa-github"></i></button>
-          </header>
-        </div>
+  <body class="vh-100"></body>
+  <div class="container-fluid"> 
+    <div class="container"> 
+      <div class="row"> 
+        <header class="d-flex justify-content-evenly align-items-center mt-3">
+          <div class="d-flex justify-content-evenly align-items-center position-relative" id="title_section"> 
+            <h1 class="fs-1" id="heading">Magic CSS </h1><i class="fa-solid fa-hat-wizard fs-4 position-absolute" id="magic_stick"></i>
+          </div>
+          <button class="fs-2 border-0 bg-transparent" id="github"><i class="fa-brands fa-github"></i></button>
+        </header>
+      </div>
+      <div class="row">
+        <nav class="col-4 offset-4 position-relative rounded" id="menu">
+          <ul class="d-flex justify-content-around align-items-center mb-0 p-3" id="menu_list">
+            <li class="menu__item fs-5 w-100 text-center"><i class="fa-solid fa-wand-magic text-primary"></i></li>
+            <li class="menu__item fs-5 w-100 text-center pe-2"> <i class="fa-solid fa-dice-d20"></i></li>
+            <li class="menu__item fs-5 w-100 text-center"><i class="fa-solid fa-cookie-bite"></i></li>
+          </ul>
+          <div class="position-absolute" id="tubeLight">
+            <div id="light"></div>
+          </div>
+        </nav>
       </div>
     </div>
-  </body>
+  </div>
+  <script src="assets/js/app.js"> </script>
 </html>
