@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
+.light body {
+  background-color: #f6f6f6;
+  color: #323232;
+}
+* {
+  font-family: "Bree Serif", serif;
+}
+
+#title_section #magic_stick {
+  top: -6px;
+  left: 57%;
+  transform: rotate(-38deg);
+}/*# sourceMappingURL=style.css.map */

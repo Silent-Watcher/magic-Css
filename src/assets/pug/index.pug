@@ -1,7 +1,15 @@
 doctype html
-html(lang="en")
+html(lang="en").light
     include includes/_head
     include includes/_body
-        
+        .container-fluid 
+            .container 
+                .row 
+                    header.d-flex.justify-content-evenly.align-items-center.mt-3
+                        #title_section.d-flex.justify-content-evenly.align-items-center.position-relative 
+                            h1#heading.fs-1 Magic CSS 
+                            i#magic_stick.fa-solid.fa-hat-wizard.fs-4.position-absolute
+                        button#github.fs-2.border-0.bg-transparent
+                            i.fa-brands.fa-github
     include includes/_scripts
     
