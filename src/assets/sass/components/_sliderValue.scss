@@ -1,0 +1,83 @@
+.range{
+    height: 80px;
+    width: 380px;
+    // background-color: #232323;
+    color: #222222;
+    border-radius: 10px;
+    position: relative;
+    padding: 0 65px 0 45px;
+    .field{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        input{
+            -webkit-appearance:none;
+            height: 3px;
+            width: 100%;
+            background-color: #9eb6ff;
+            border-radius: 5px;
+            outline: 0;
+            border: none;
+            &::-webkit-slider-thumb{
+                -webkit-appearance:none;
+                height: 10px;
+                width: 10px;
+                background-color: royalblue;
+                border-radius: 50%;
+                border: 1px solid #315bda;
+                cursor: pointer;
+            }
+            &::-moz-range-progress{
+                background-color: royalblue;
+            }
+        }
+        .value{
+            font-size: 14px;
+            &.left{
+                margin-right: 10px;
+            }
+            &.right{
+                margin-left: 10px;
+            }
+        }
+    }
+    .slider_value{
+        position: relative;
+        width: 100%;
+        >span{
+            color: #f5f5f5;
+            position: absolute;
+            font-size: 13px;
+            height: 25px;
+            width: 25px;
+            font-weight: 500;
+            top: -9px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transform: translateX(-50%) scale(0);
+            transition: transform .3s ease-in-out;
+            transform-origin: bottom;
+            &.show{
+                transform: translateX(-50%) scale(1);
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                height: 30px;
+                width: 30px;
+                background-color: royalblue;
+                left: 50%;
+                transform: translateX(-50%) rotate(45deg);
+                z-index: -1;
+                border: 3px solid #2147bb;
+                border-top-left-radius: 100%;
+                border-top-right-radius: 100%;
+                border-bottom-left-radius: 100%;
+            }
+        }
+    }
+}
