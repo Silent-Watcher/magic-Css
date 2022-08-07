@@ -3,6 +3,19 @@
   background-color: #f6f6f6;
   color: #323232;
 }
+.light #menu {
+  background-color: rgba(189, 189, 189, 0.5568627451);
+}
+.light #menu #menu_list .menu__item {
+  color: #222222;
+}
+.light #menu #tubeLight {
+  background-color: #5e81ec;
+}
+.light #menu #tubeLight #light {
+  background: linear-gradient(to bottom, rgba(94, 129, 236, 0.3764705882) 50%, rgba(255, 255, 255, 0) 98%);
+}
+
 * {
   font-family: "Bree Serif", serif;
 }
@@ -89,4 +102,13 @@
   100% {
     opacity: 1;
   }
+}
+#boxShadowMagic__page #boxShadowMagic_result #boxShadowMagic_sample {
+  width: 150px;
+  height: 150px;
+  background-color: #ccc;
+}
+
+.page {
+  height: calc(100vh - 150px);
 }/*# sourceMappingURL=style.css.map */

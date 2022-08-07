@@ -58,3 +58,19 @@
   40% {opacity: 0.5;} 60% {opacity: 1;}
   80% {opacity: 0;} 100% {opacity: 1;}
 }
+// 
+#boxShadowMagic__page{
+    #boxShadowMagic_tools{
+
+    }
+    #boxShadowMagic_result{
+        #boxShadowMagic_sample{
+            width: 150px;
+            height: 150px;
+            background-color: #ccc;
+        }
+    }
+}
+.page{
+    height: calc(100vh - 150px);
+}

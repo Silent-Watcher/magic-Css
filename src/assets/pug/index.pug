@@ -2,7 +2,7 @@ doctype html
 html(lang="en").light
     include includes/_head
     include includes/_body
-        .container-fluid 
+        .container-fluid.vh-100
             .container 
                 .row 
                     header.d-flex.justify-content-evenly.align-items-center.mt-3
@@ -11,8 +11,15 @@ html(lang="en").light
                             i#magic_stick.fa-solid.fa-hat-wizard.fs-4.position-absolute
                         button#github.fs-2.border-0.bg-transparent
                             i.fa-brands.fa-github
-                .row
-                    nav#menu.col-4.offset-4.position-relative.rounded
+            .container#boxShadowMagic__page.page
+                .row.h-100 
+                    section#boxShadowMagic_tools.col-6.text-center.d-flex.flex-column.align-items-center.justify-content-center
+                        
+                    section#boxShadowMagic_result.col-6.d-flex.flex-column.align-items-center.justify-content-center
+                        section#boxShadowMagic_sample.d-inline-block
+            .container
+                .row.text-center.d-flex.justify-content-center
+                    nav#menu.col-4.position-relative.rounded
                         ul#menu_list.d-flex.justify-content-around.align-items-center.mb-0.p-3
                             li.menu__item.fs-5.w-100.text-center
                                 i.fa-solid.fa-wand-magic.text-primary

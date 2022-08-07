@@ -11,6 +11,25 @@
     }
     #github {
     }
+
+    #menu {
+        background-color: #bdbdbd8e;
+        #menu_list {
+          .menu__item {
+            color: #222222;
+          }
+        }
+        #tubeLight {
+          background-color: #5e81ec;
+          #light {
+            background: linear-gradient(
+              to bottom,
+              #5e81ec60 50%,
+              #ffffff00 98%
+            );
+          }
+        }
+      }
 }
 // color: #ca5aca;
 // color: #f31c63;
