@@ -7,7 +7,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
+body{
+  overflow-x: hidden;
+}
 /* Firefox */
 input[type='number'] {
   -moz-appearance: textfield;

@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Magic CSS</title>
   </head>
-  <body class="vh-100 overflow-hidden"></body>
-  <div class="container-fluid vh-100">
+  <body class="vh-100 position-relative"></body>
+  <div class="container-fluid vh-100 d-flex justify-content-center align-items-center flex-column">
     <div class="container"> 
       <div class="row"> 
         <header class="d-flex justify-content-evenly align-items-center mt-3">
@@ -27,7 +27,7 @@
         </header>
       </div>
     </div>
-    <div class="container page" id="boxShadowMagic__page">
+    <div class="container page position-absolute top-25 start-0 end-0" id="boxShadowMagic__page">
       <div class="row h-100"> 
         <section class="col-8" id="boxShadowMagic_tools">
           <div class="row h-100"> 
@@ -102,7 +102,7 @@
         </section>
       </div>
     </div>
-    <div class="container">
+    <div class="container mt-auto mb-2">
       <div class="row text-center d-flex justify-content-center">
         <nav class="col-4 position-relative rounded" id="menu">
           <ul class="d-flex justify-content-around align-items-center mb-0 p-3" id="menu_list">
