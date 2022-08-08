@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
+.light body {
+  background-color: #f6f6f6;
+  color: #323232;
+}
+.light #menu {
+  background-color: rgba(189, 189, 189, 0.5568627451);
+}
+.light #menu #menu_list .menu__item {
+  color: #222222;
+}
+.light #menu #tubeLight {
+  background-color: #5e81ec;
+}
+.light #menu #tubeLight #light {
+  background: linear-gradient(to bottom, rgba(94, 129, 236, 0.3764705882) 50%, rgba(255, 255, 255, 0) 98%);
+}
+
+* {
+  font-family: "Bree Serif", serif;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.show {
+  transform: translateX(-50%) scale(1) !important;
+}
+
+.slider_range {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider_range .wrapper_slider {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.slider_range .wrapper_slider > .navigator {
+  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  font-size: 14px;
+  transform: translateX(-50%) scale(0);
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5f5f5;
+  z-index: 2;
+}
+.slider_range .wrapper_slider > .navigator::after {
+  content: "";
+  position: absolute;
+  background-color: royalblue;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 28px;
+  height: 28px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: -1;
+}
+.slider_range .wrapper_slider > .slider_range_input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background-color: #9bb4ff;
+  border-radius: 5px;
+  outline: 0;
+  border: 0;
+}
+.slider_range .wrapper_slider > .slider_range_input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: royalblue;
+}
+.slider_range .wrapper_slider > .slider_range_input::-moz-range-progress {
+  background-color: royalblue;
+}
+
+.value.right {
+  margin-left: 10px;
+  font-size: 16px;
+}
+.value.left {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+#title_section #magic_stick {
+  top: -6px;
+  left: 57%;
+  transform: rotate(-38deg);
+  color: rgb(65, 105, 225);
+}
+
+#menu {
+  background-color: rgba(189, 189, 189, 0.5568627451);
+}
+#menu #menu_list {
+  list-style: none;
+}
+#menu #menu_list .menu__item {
+  cursor: pointer;
+  color: #222222;
+}
+#menu #tubeLight {
+  height: 5px;
+  width: 45px;
+  display: block;
+  background-color: #5e81ec;
+  top: 0;
+  left: 45px;
+  transform: translateX(50%);
+  transition: left 0.5s;
+}
+#menu #tubeLight #light {
+  position: absolute;
+  width: 160%;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(94, 129, 236, 0.3764705882) 50%, rgba(255, 255, 255, 0) 98%);
+  -webkit-clip-path: polygon(19% 0, 80% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(19% 0, 80% 0%, 100% 100%, 0% 100%);
+  left: -30%;
+  top: 5px;
+}
+
+.active {
+  -webkit-animation: show 0.7s;
+          animation: show 0.7s;
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#boxShadowMagic__page #boxShadowMagic_tools #color_boxShadow #boxShadow__ColorInfo input,
+#boxShadowMagic__page #boxShadowMagic_tools #color_boxShadow #boxShadow__ColorInfo label {
+  outline: 0;
+  text-align: center;
+  font-size: 14px;
+  width: 50px;
+}
+#boxShadowMagic__page #boxShadowMagic_tools #color_boxShadow #boxShadow__ColorInfo input:nth-of-type(1),
+#boxShadowMagic__page #boxShadowMagic_tools #color_boxShadow #boxShadow__ColorInfo label:nth-of-type(1) {
+  width: 80px;
+}
+#boxShadowMagic__page #boxShadowMagic_tools #color_boxShadow #bxsh_colorPalette {
+  display: flex;
+}
+#boxShadowMagic__page #boxShadowMagic_tools #color_boxShadow #bxsh_colorPalette .color {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 4px;
+  display: inline-block;
+}
+#boxShadowMagic__page #boxShadowMagic_result #boxShadowMagic_sample {
+  width: 150px;
+  height: 150px;
+  background-color: #ccc;
+}
+
+.page {
+  height: calc(100vh - 150px);
+}
+
+#bxsh_inset_input {
+  accent-color: #7ed321;
+}
+#bxsh_inset_input + label {
+  cursor: pointer;
+  font-size: 16px;
+}/*# sourceMappingURL=style.css.map */

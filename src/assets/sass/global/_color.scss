@@ -1,0 +1,36 @@
+.light {
+    body{
+        background-color: #f6f6f6;
+        color: #323232;
+    }
+    #title_section{
+        #heading{
+        }
+        #magic_stick{
+        }
+    }
+    #github {
+    }
+
+    #menu {
+        background-color: #bdbdbd8e;
+        #menu_list {
+          .menu__item {
+            color: #222222;
+          }
+        }
+        #tubeLight {
+          background-color: #5e81ec;
+          #light {
+            background: linear-gradient(
+              to bottom,
+              #5e81ec60 50%,
+              #ffffff00 98%
+            );
+          }
+        }
+      }
+}
+// color: #ca5aca;
+// color: #f31c63;
+// color: #ed6b5b;

@@ -1,6 +1,100 @@
 doctype html
-html(lang="en")
+html(lang="en").light
     include includes/_head
     include includes/_body
+        .container-fluid.vh-100
+            .container 
+                .row 
+                    header.d-flex.justify-content-evenly.align-items-center.mt-3
+                        #title_section.d-flex.justify-content-evenly.align-items-center.position-relative 
+                            h1#heading.fs-1 Magic CSS 
+                            i#magic_stick.fa-solid.fa-hat-wizard.fs-4.position-absolute
+                        button#github.fs-2.border-0.bg-transparent
+                            i.fa-brands.fa-github
+            .container#boxShadowMagic__page.page
+                .row.h-100 
+                    section#boxShadowMagic_tools.col-8
+                        .row.h-100 
+                            .col-6.text-center.d-flex.flex-column.align-items-center.justify-content-center.fs-5
+                                section#x_boxShadow
+                                    p.mb-0 X 
+                                    .slider_range.bxsh_slider_range
+                                        span.value.left -130
+                                        .wrapper_slider
+                                            span.navigator 0
+                                            input.slider_range_input#x_bxsh(type='range' min='-130' max='130' value='10')
+                                        span.value.right 130
+                                section#Y_boxShadow
+                                    p.mb-0 Y 
+                                    .slider_range.bxsh_slider_range
+                                        span.value.left -130
+                                        .wrapper_slider
+                                            span.navigator 0
+                                            input.slider_range_input#y_bxsh(type='range' min='-130' max='130' value='10')
+                                        span.value.right 130
+                                section#blur_boxShadow
+                                    p.mb-0 Blur 
+                                    .slider_range.bxsh_slider_range
+                                        span.value.left 0
+                                        .wrapper_slider
+                                            span.navigator 0
+                                            input.slider_range_input#blur_bxsh(type='range' min='0' max='130' value='5')
+                                        span.value.right 130
+                                section#spread_boxShadow
+                                    p.mb-0 Spread 
+                                    .slider_range.bxsh_slider_range
+                                        span.value.left -50
+                                        .wrapper_slider
+                                            span.navigator 0
+                                            input.slider_range_input#spread_bxsh(type='range' min='-50' max='50' value='0')
+                                        span.value.right 50
+                                section#inset_boxShadow.d-flex.justify-content-center.align-items-center 
+                                    input#bxsh_inset_input(type="checkbox", name="").pt-2
+                                    label(for='bxsh_inset_input').ms-2 Inset 
+                            .col-6.text-center.d-flex.flex-column.align-items-center.justify-content-center.fs-5 
+                                section#color_boxShadow.d-flex.flex-column.align-items-center 
+                                    #color_boxShadow_color_picker.color-picker
+                                    section#boxShadow__ColorInfo.d-flex.flex-column.mt-4
+                                        .wrapper.d-flex
+                                            input.hex__color#bxsh_hex(type="text", name="" value='#4169e1').d-inline-block
+                                            input.r__color#bxsh_r(type="number", name="" value='65' max='255' min='0').d-inline-block
+                                            input.g__color#bxsh_g(type="number", name="" value='105' max='255' min='0').d-inline-block
+                                            input.b__color#bxsh_b(type="number", name="" value='225' max='255' min='0').d-inline-block
+                                            input.a__color#bxsh_a(type="number", name="" value='0' max='255' min='0').d-inline-block
+                                        .wrapper.d-flex
+                                            label(for="bxsh_hex") Hex
+                                            label(for="bxsh_r") R
+                                            label(for="bxsh_g") G
+                                            label(for="bxsh_b") B
+                                            label(for="bxsh_a") A
+                                    section#bxsh_colorPalette.w-75.flex-wrap.mt-3.justify-content-center
+                                        span.color(style='background-color:#D0021B' title='#D0021B') 
+                                        span.color(style='background-color:#F5A623' title='#F5A623') 
+                                        span.color(style='background-color:#F8E71C' title='#F8E71C') 
+                                        span.color(style='background-color:#8B572A' title='#8B572A') 
+                                        span.color(style='background-color:#7ED321' title='#7ED321') 
+                                        span.color(style='background-color:#417505' title='#417505') 
+                                        span.color(style='background-color:#BD10E0' title='#BD10E0') 
+                                        span.color(style='background-color:#9013FE' title='#9013FE') 
+                                        span.color(style='background-color:#4A90E2' title='#4A90E2') 
+                                        span.color(style='background-color:#50E3C2' title='#50E3C2') 
+                                        span.color(style='background-color:#B8E986' title='#B8E986') 
+                                        span.color(style='background-color:#000000' title='#000000') 
+                                        span.color(style='background-color:#4A4A4A' title='#4A4A4A') 
+                                        span.color(style='background-color:#9B9B9B' title='#9B9B9B') 
+                    section#boxShadowMagic_result.col-4.d-flex.flex-column.align-items-center.justify-content-center
+                        section#boxShadowMagic_sample.d-inline-block
+            .container
+                .row.text-center.d-flex.justify-content-center
+                    nav#menu.col-4.position-relative.rounded
+                        ul#menu_list.d-flex.justify-content-around.align-items-center.mb-0.p-3
+                            li.menu__item.fs-5.w-100.text-center
+                                i.fa-solid.fa-wand-magic.text-primary
+                            li.menu__item.fs-5.w-100.text-center.pe-2 
+                                i.fa-solid.fa-dice-d20
+                            li.menu__item.fs-5.w-100.text-center
+                                i.fa-solid.fa-cookie-bite
+                        #tubeLight.position-absolute
+                            #light
     include includes/_scripts
     
