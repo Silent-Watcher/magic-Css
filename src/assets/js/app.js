@@ -7,6 +7,7 @@ const sliders = $.querySelectorAll('.rangeSliders');
 const bxshBox = $.querySelector('#boxShadowMagic_sample');
 const bxshResultDisplay = $.querySelector('#bxsh_result_display');
 const bxshResultBtn = bxshResultDisplay.lastElementChild;
+let bxshSliderRanges = $.querySelectorAll('.bxsh_slider_range');
 let [xBxsh, yBxsh, blurBxsh, spreadBxsh, colorBxsh] = [0, 0, 0, 0, '#5e81ec'];
 // color picker initialization for magic box shadow
 let boxShadowSliderPicker = new iro.ColorPicker(
@@ -57,7 +58,7 @@ const Toast = Swal.mixin({
     toast.addEventListener('mouseleave', Swal.resumeTimer);
   },
 });
-// 
+//
 function getRGB(rgbString) {
   rgbString = rgbString.replace('rgb(', '');
   rgbString = rgbString.replace(')', '');
@@ -103,7 +104,6 @@ rangeSliders.forEach((rangeSlider) => {
   });
 });
 // range slide value change detect
-let bxshSliderRanges = document.querySelectorAll('.bxsh_slider_range');
 bxshSliderRanges.forEach((bxshSliderRange) => {
   bxshSliderRange.firstElementChild.nextElementSibling.lastElementChild.addEventListener(
     'change',
@@ -132,7 +132,7 @@ bxshSliderRanges.forEach((bxshSliderRange) => {
 });
 //
 // detect color change magic box shadow
-boxShadowSliderPicker.on(['color:init', 'color:change'], function (color) {
+boxShadowSliderPicker.on(['color:init', 'color:change'],  (color)=> {
   // Show the current color in different formats
   $.querySelector('#bxsh_hex').value = color.hexString;
   $.querySelector('#bxsh_r').value = getRGB(color.rgbString)[0];
@@ -145,7 +145,7 @@ boxShadowSliderPicker.on(['color:init', 'color:change'], function (color) {
 });
 [...$.querySelector('#bxsh_colorPalette').children].forEach(
   (bxshColorPalette) => {
-    bxshColorPalette.addEventListener('click', function () {
+    bxshColorPalette.addEventListener('click', () => {
       boxShadowSliderPicker.color.set(bxshColorPalette.style.backgroundColor);
     });
   }
