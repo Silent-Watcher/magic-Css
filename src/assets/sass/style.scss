@@ -2,6 +2,7 @@
 @import 'global/font';
 @import 'global/reset';
 @import 'components/sliderValue';
+@import 'utilities/cursor';
 
 #title_section {
   #heading {
@@ -105,7 +106,24 @@
     }
   }
   #boxShadowMagic_result {
+    #bxsh_result_display{
+      font-size: 20px;
+    }
+    #copyBxsh{
+      background-color: #4169e1;
+      top: -14px;
+      right: 10px;
+      transform: scale(0);
+      font-size: 12px;
+      transition: all .3s ease-in-out;
+      color: #f5f5f5;
+      font-size: 10px;
+      &:hover{
+        background-color: #2f56ca;
+      }
+    }
     #boxShadowMagic_sample {
+      margin-top: 200px;
       width: 150px;
       height: 150px;
       background-color: #ccc;
@@ -116,9 +134,6 @@
   height: calc(100vh - 150px);
 }
 //
-// #boxShadowMagic_sample{
-//   box-shadow: 0 0 0 0 #000;
-// }
 #bxsh_inset_input {
   accent-color: #7ed321;
   + label {

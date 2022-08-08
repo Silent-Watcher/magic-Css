@@ -1,4 +1,4 @@
-.show{
+.show_range_slider{
     transform: translateX(-50%) scale(1)!important;
 }
 .slider_range {
@@ -50,6 +50,7 @@
       &::-webkit-slider-thumb{
           -webkit-appearance:none;
           width: 10px;
+          cursor: pointer;
           height: 10px;
           border-radius: 50%;
           background-color: royalblue;

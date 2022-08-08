@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 .light body {
-  background-color: #f6f6f6;
+  background-color: #f5f5f5;
+  color: #323232;
+}
+.light ::-moz-selection {
+  color: #232323;
+  background-color: #ccc;
+}
+.light ::selection {
+  color: #232323;
+  background-color: #ccc;
+}
+.light #github > a {
   color: #323232;
 }
 .light #menu {
@@ -32,7 +43,15 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.show {
+.custom-tooltip {
+  --bs-tooltip-bg: #2f56ca;
+}
+
+.custom-tooltip-success {
+  --bs-tooltip-bg: #7ed321!important;
+}
+
+.show_range_slider {
   transform: translateX(-50%) scale(1) !important;
 }
 
@@ -88,6 +107,7 @@ input[type=number] {
 .slider_range .wrapper_slider > .slider_range_input::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 10px;
+  cursor: pointer;
   height: 10px;
   border-radius: 50%;
   background-color: royalblue;
@@ -103,6 +123,10 @@ input[type=number] {
 .value.left {
   margin-right: 10px;
   font-size: 16px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 #title_section #magic_stick {
@@ -211,7 +235,24 @@ input[type=number] {
   border-radius: 4px;
   display: inline-block;
 }
+#boxShadowMagic__page #boxShadowMagic_result #bxsh_result_display {
+  font-size: 20px;
+}
+#boxShadowMagic__page #boxShadowMagic_result #copyBxsh {
+  background-color: #4169e1;
+  top: -14px;
+  right: 10px;
+  transform: scale(0);
+  font-size: 12px;
+  transition: all 0.3s ease-in-out;
+  color: #f5f5f5;
+  font-size: 10px;
+}
+#boxShadowMagic__page #boxShadowMagic_result #copyBxsh:hover {
+  background-color: #2f56ca;
+}
 #boxShadowMagic__page #boxShadowMagic_result #boxShadowMagic_sample {
+  margin-top: 200px;
   width: 150px;
   height: 150px;
   background-color: #ccc;

@@ -1,7 +1,12 @@
 .light {
+  
     body{
-        background-color: #f6f6f6;
+        background-color: #f5f5f5;
         color: #323232;
+    }
+    ::selection{
+      color: #232323;
+      background-color: #ccc;
     }
     #title_section{
         #heading{
@@ -10,6 +15,9 @@
         }
     }
     #github {
+      > a{
+        color: #323232;
+      }
     }
 
     #menu {

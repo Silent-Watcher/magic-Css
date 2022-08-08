@@ -1,5 +1,5 @@
 * {
-    font-family: 'Bree Serif', serif;
+  font-family: 'Bree Serif', serif;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -9,6 +9,13 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type='number'] {
   -moz-appearance: textfield;
+}
+
+.custom-tooltip {
+  --bs-tooltip-bg: #2f56ca;
+}
+.custom-tooltip-success {
+  --bs-tooltip-bg: #7ed321!important;
 }
