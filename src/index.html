@@ -26,59 +26,64 @@
       <div class="row h-100"> 
         <section class="col-8" id="boxShadowMagic_tools">
           <div class="row h-100"> 
-            <div class="col-6 text-center d-flex flex-column align-items-center justify-content-center fs-5"> 
+            <div class="col-6 text-center d-flex flex-column align-items-center justify-content-center fs-5">
               <section id="x_boxShadow">
                 <p class="mb-0">X </p>
-                <div class="range">
-                  <div class="slider_value"> <span>0 </span></div>
-                  <div class="field"> 
-                    <div class="value left">-130 </div>
-                    <input class="rangeSliders" type="range" name="" min="-130" max="130" value="0" steps="1">
-                    <div class="value right">130</div>
-                  </div>
+                <div class="slider_range bxsh_slider_range"><span class="value left">-130</span>
+                  <div class="wrapper_slider"><span class="navigator">0</span>
+                    <input class="slider_range_input" id="x_bxsh" type="range" min="-130" max="130" value="10">
+                  </div><span class="value right">130</span>
                 </div>
               </section>
               <section id="Y_boxShadow">
                 <p class="mb-0">Y </p>
-                <div class="range">
-                  <div class="slider_value"> <span>0</span></div>
-                  <div class="field"> 
-                    <div class="value left">-130 </div>
-                    <input class="rangeSliders" type="range" name="" min="-130" max="130" value="0" steps="1">
-                    <div class="value right">130</div>
-                  </div>
+                <div class="slider_range bxsh_slider_range"><span class="value left">-130</span>
+                  <div class="wrapper_slider"><span class="navigator">0</span>
+                    <input class="slider_range_input" id="y_bxsh" type="range" min="-130" max="130" value="10">
+                  </div><span class="value right">130</span>
                 </div>
               </section>
               <section id="blur_boxShadow">
                 <p class="mb-0">Blur </p>
-                <div class="range">
-                  <div class="slider_value"> <span>100 </span></div>
-                  <div class="field"> 
-                    <div class="value left">-130 </div>
-                    <input class="rangeSliders" type="range" name="" min="-130" max="130" value="0" steps="1">
-                    <div class="value right">130</div>
-                  </div>
+                <div class="slider_range bxsh_slider_range"><span class="value left">0</span>
+                  <div class="wrapper_slider"><span class="navigator">0</span>
+                    <input class="slider_range_input" id="blur_bxsh" type="range" min="0" max="130" value="5">
+                  </div><span class="value right">130</span>
                 </div>
               </section>
               <section id="spread_boxShadow">
                 <p class="mb-0">Spread </p>
-                <div class="range">
-                  <div class="slider_value"> <span>0 </span></div>
-                  <div class="field"> 
-                    <div class="value left">-130 </div>
-                    <input class="rangeSliders" type="range" name="" min="-130" max="130" value="0" steps="1">
-                    <div class="value right">130</div>
-                  </div>
+                <div class="slider_range bxsh_slider_range"><span class="value left">-50</span>
+                  <div class="wrapper_slider"><span class="navigator">0</span>
+                    <input class="slider_range_input" id="spread_bxsh" type="range" min="-50" max="50" value="0">
+                  </div><span class="value right">50</span>
                 </div>
               </section>
-              <section id="inset_boxShadow"> 
-                <lable>Inset </lable>
-                <input id="inset_input" type="checkbox" name="">
+              <section class="d-flex justify-content-center align-items-center" id="inset_boxShadow"> 
+                <input class="pt-2" id="bxsh_inset_input" type="checkbox" name="">
+                <label class="ms-2" for="bxsh_inset_input">Inset </label>
               </section>
             </div>
             <div class="col-6 text-center d-flex flex-column align-items-center justify-content-center fs-5"> 
-              <section id="color_boxShadow"> 
-                <div id="color_picker"></div>
+              <section class="d-flex flex-column align-items-center" id="color_boxShadow"> 
+                <div class="color-picker" id="color_boxShadow_color_picker"></div>
+                <section class="d-flex flex-column mt-4" id="boxShadow__ColorInfo">
+                  <div class="wrapper d-flex">
+                    <input class="hex__color d-inline-block" id="bxsh_hex" type="text" name="" value="#4169e1">
+                    <input class="r__color d-inline-block" id="bxsh_r" type="number" name="" value="65" max="255" min="0">
+                    <input class="g__color d-inline-block" id="bxsh_g" type="number" name="" value="105" max="255" min="0">
+                    <input class="b__color d-inline-block" id="bxsh_b" type="number" name="" value="225" max="255" min="0">
+                    <input class="a__color d-inline-block" id="bxsh_a" type="number" name="" value="0" max="255" min="0">
+                  </div>
+                  <div class="wrapper d-flex">
+                    <label for="bxsh_hex">Hex</label>
+                    <label for="bxsh_r">R</label>
+                    <label for="bxsh_g">G</label>
+                    <label for="bxsh_b">B</label>
+                    <label for="bxsh_a">A</label>
+                  </div>
+                </section>
+                <section class="w-75 flex-wrap mt-3 justify-content-center" id="bxsh_colorPalette"><span class="color" style="background-color:#D0021B" title="#D0021B"> </span><span class="color" style="background-color:#F5A623" title="#F5A623"> </span><span class="color" style="background-color:#F8E71C" title="#F8E71C"> </span><span class="color" style="background-color:#8B572A" title="#8B572A"> </span><span class="color" style="background-color:#7ED321" title="#7ED321"> </span><span class="color" style="background-color:#417505" title="#417505"> </span><span class="color" style="background-color:#BD10E0" title="#BD10E0"> </span><span class="color" style="background-color:#9013FE" title="#9013FE"> </span><span class="color" style="background-color:#4A90E2" title="#4A90E2"> </span><span class="color" style="background-color:#50E3C2" title="#50E3C2"> </span><span class="color" style="background-color:#B8E986" title="#B8E986"> </span><span class="color" style="background-color:#000000" title="#000000"> </span><span class="color" style="background-color:#4A4A4A" title="#4A4A4A"> </span><span class="color" style="background-color:#9B9B9B" title="#9B9B9B"> </span></section>
               </section>
             </div>
           </div>

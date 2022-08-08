@@ -20,93 +20,96 @@
   font-family: "Bree Serif", serif;
 }
 
-.range {
-  height: 80px;
-  width: 380px;
-  color: #222222;
-  border-radius: 10px;
-  position: relative;
-  padding: 0 65px 0 45px;
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-.range .field {
-  position: relative;
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.show {
+  transform: translateX(-50%) scale(1) !important;
+}
+
+.slider_range {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
-.range .field input {
-  -webkit-appearance: none;
-  height: 3px;
-  width: 100%;
-  background-color: #9eb6ff;
-  border-radius: 5px;
-  outline: 0;
-  border: none;
-}
-.range .field input::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 10px;
-  width: 10px;
-  background-color: royalblue;
-  border-radius: 50%;
-  border: 1px solid #315bda;
-  cursor: pointer;
-}
-.range .field input::-moz-range-progress {
-  background-color: royalblue;
-}
-.range .field .value {
-  font-size: 14px;
-}
-.range .field .value.left {
-  margin-right: 10px;
-}
-.range .field .value.right {
-  margin-left: 10px;
-}
-.range .slider_value {
+.slider_range .wrapper_slider {
   position: relative;
-  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
 }
-.range .slider_value > span {
-  color: #f5f5f5;
+.slider_range .wrapper_slider > .navigator {
+  transition: transform 0.3s ease-in-out;
   position: absolute;
-  font-size: 13px;
-  height: 25px;
-  width: 25px;
-  font-weight: 500;
-  top: -9px;
+  top: -15px;
+  left: 50%;
+  font-size: 14px;
+  transform: translateX(-50%) scale(0);
+  width: 28px;
+  height: 28px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  color: #f5f5f5;
   z-index: 2;
-  transform: translateX(-50%) scale(0);
-  transition: transform 0.3s ease-in-out;
-  transform-origin: bottom;
 }
-.range .slider_value > span.show {
-  transform: translateX(-50%) scale(1);
-}
-.range .slider_value > span::after {
+.slider_range .wrapper_slider > .navigator::after {
   content: "";
   position: absolute;
-  height: 30px;
-  width: 30px;
   background-color: royalblue;
+  top: 0;
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
+  width: 28px;
+  height: 28px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
   z-index: -1;
-  border: 3px solid #2147bb;
-  border-top-left-radius: 100%;
-  border-top-right-radius: 100%;
-  border-bottom-left-radius: 100%;
+}
+.slider_range .wrapper_slider > .slider_range_input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background-color: #9bb4ff;
+  border-radius: 5px;
+  outline: 0;
+  border: 0;
+}
+.slider_range .wrapper_slider > .slider_range_input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: royalblue;
+}
+.slider_range .wrapper_slider > .slider_range_input::-moz-range-progress {
+  background-color: royalblue;
+}
+
+.value.right {
+  margin-left: 10px;
+  font-size: 16px;
+}
+.value.left {
+  margin-right: 10px;
+  font-size: 16px;
 }
 
 #title_section #magic_stick {
   top: -6px;
   left: 57%;
   transform: rotate(-38deg);
+  color: rgb(65, 105, 225);
 }
 
 #menu {
@@ -186,6 +189,28 @@
     opacity: 1;
   }
 }
+#boxShadowMagic__page #boxShadowMagic_tools #color_boxShadow #boxShadow__ColorInfo input,
+#boxShadowMagic__page #boxShadowMagic_tools #color_boxShadow #boxShadow__ColorInfo label {
+  outline: 0;
+  text-align: center;
+  font-size: 14px;
+  width: 50px;
+}
+#boxShadowMagic__page #boxShadowMagic_tools #color_boxShadow #boxShadow__ColorInfo input:nth-of-type(1),
+#boxShadowMagic__page #boxShadowMagic_tools #color_boxShadow #boxShadow__ColorInfo label:nth-of-type(1) {
+  width: 80px;
+}
+#boxShadowMagic__page #boxShadowMagic_tools #color_boxShadow #bxsh_colorPalette {
+  display: flex;
+}
+#boxShadowMagic__page #boxShadowMagic_tools #color_boxShadow #bxsh_colorPalette .color {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 4px;
+  display: inline-block;
+}
 #boxShadowMagic__page #boxShadowMagic_result #boxShadowMagic_sample {
   width: 150px;
   height: 150px;
@@ -194,4 +219,12 @@
 
 .page {
   height: calc(100vh - 150px);
+}
+
+#bxsh_inset_input {
+  accent-color: #7ed321;
+}
+#bxsh_inset_input + label {
+  cursor: pointer;
+  font-size: 16px;
 }/*# sourceMappingURL=style.css.map */

@@ -10,6 +10,7 @@
     top: -6px;
     left: 57%;
     transform: rotate(-38deg);
+    color: rgb(65, 105, 225);
   }
 }
 #github {
@@ -55,23 +56,73 @@
   animation: show 0.7s;
 }
 @keyframes show {
-  0% {opacity: 0;} 20% {opacity: 1;}
-  40% {opacity: 0.5;} 60% {opacity: 1;}
-  80% {opacity: 0;} 100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-// 
-#boxShadowMagic__page{
-    #boxShadowMagic_tools{
-
-    }
-    #boxShadowMagic_result{
-        #boxShadowMagic_sample{
-            width: 150px;
-            height: 150px;
-            background-color: #ccc;
+//
+#boxShadowMagic__page {
+  #boxShadowMagic_tools {
+    #color_boxShadow {
+      #boxShadow__ColorInfo {
+        input,
+        label {
+          outline: 0;
+          text-align: center;
+          font-size: 14px;
+          width: 50px;
+          &:nth-of-type(1) {
+            width: 80px;
+          }
         }
+      }
+      #bxsh_colorPalette {
+        display: flex;
+        .color {
+          cursor: pointer;
+          width: 30px;
+          height: 30px;
+          margin: 5px;
+          border-radius: 4px;
+          display: inline-block;
+        }
+      }
     }
+  }
+  #boxShadowMagic_result {
+    #boxShadowMagic_sample {
+      width: 150px;
+      height: 150px;
+      background-color: #ccc;
+    }
+  }
 }
-.page{
-    height: calc(100vh - 150px);
+.page {
+  height: calc(100vh - 150px);
+}
+//
+// #boxShadowMagic_sample{
+//   box-shadow: 0 0 0 0 #000;
+// }
+#bxsh_inset_input {
+  accent-color: #7ed321;
+  + label {
+    cursor: pointer;
+    font-size: 16px;
+  }
 }
