@@ -7,6 +7,7 @@ const sliders = $.querySelectorAll('.rangeSliders');
 const bxshBox = $.querySelector('#boxShadowMagic_sample');
 const bxshResultDisplay = $.querySelector('#bxsh_result_display');
 const bxshResultBtn = bxshResultDisplay.lastElementChild;
+
 let bxshSliderRanges = $.querySelectorAll('.bxsh_slider_range');
 let [xBxsh, yBxsh, blurBxsh, spreadBxsh, colorBxsh] = [0, 0, 0, 0, '#5e81ec'];
 // color picker initialization for magic box shadow
@@ -103,7 +104,7 @@ rangeSliders.forEach((rangeSlider) => {
     this.previousElementSibling.classList.remove('show_range_slider');
   });
 });
-// range slide value change detect
+// range slide value change detect for box shadows
 bxshSliderRanges.forEach((bxshSliderRange) => {
   bxshSliderRange.firstElementChild.nextElementSibling.lastElementChild.addEventListener(
     'change',
@@ -132,7 +133,7 @@ bxshSliderRanges.forEach((bxshSliderRange) => {
 });
 //
 // detect color change magic box shadow
-boxShadowSliderPicker.on(['color:init', 'color:change'],  (color)=> {
+boxShadowSliderPicker.on(['color:init', 'color:change'], (color) => {
   // Show the current color in different formats
   $.querySelector('#bxsh_hex').value = color.hexString;
   $.querySelector('#bxsh_r').value = getRGB(color.rgbString)[0];
@@ -150,43 +151,170 @@ boxShadowSliderPicker.on(['color:init', 'color:change'],  (color)=> {
     });
   }
 );
-// ------------------ copy bxsh result to the clipboard and show some stuff like tooltip and alert------------
-const tooltip = new bootstrap.Tooltip(bxshResultDisplay.lastElementChild, {
-  title: 'copy to clipboard',
-  customClass: 'custom-tooltip',
-  placement: 'top',
-});
-// appear copyToClipBoard btn
-bxshResultDisplay.addEventListener('mouseenter', function () {
-  this.lastElementChild.style.transform = 'scale(1)';
-});
-bxshResultDisplay.addEventListener('mouseleave', function () {
-  this.lastElementChild.style.transform = 'scale(0)';
-});
-// copu to clipboard
-bxshResultBtn.addEventListener('click', function () {
-  Toast.fire({
-    icon: 'success',
-    title: 'copied to clipboard 🤗',
+// ------------------copy to clipboard functionality ------------
+let copyToClipBoardBtns = $.querySelectorAll('.copyToClipboardBtn');
+copyToClipBoardBtns.forEach((copyToClipBoardBtn) => {
+  copyToClipBoardBtn.parentElement.addEventListener('mouseenter', function () {
+    copyToClipBoardBtn.style.transform = 'scale(1)';
   });
-  this.style.backgroundColor = '#7ed321';
-  this.firstElementChild.classList.replace('fa-clipboard-list', 'fa-check');
-  navigator.clipboard.writeText(
-    this.previousElementSibling.firstElementChild.textContent
-  );
-  tooltip.setContent({ '.tooltip-inner': 'copied !' });
-  setTimeout(() => {
-    this.style.backgroundColor = '#4169e1';
-    this.firstElementChild.classList.replace('fa-check', 'fa-clipboard-list');
-    tooltip.setContent({ '.tooltip-inner': 'copy to clip board' });
-  }, 500);
-});
-// show tooltip
-bxshResultBtn.addEventListener('mouseenter', () => {
-  tooltip.enable();
-});
-// hide tooltip
-bxshResultBtn.addEventListener('mouseleave', () => {
-  tooltip.hide();
+  copyToClipBoardBtn.parentElement.addEventListener('mouseleave', function () {
+    copyToClipBoardBtn.style.transform = 'scale(0)';
+  });
+  copyToClipBoardBtn.addEventListener('click', function () {
+    Toast.fire({
+      icon: 'success',
+      title: 'copied to clipboard 🤗',
+    });
+    this.firstElementChild.classList.replace('fa-clipboard-list', 'fa-check');
+    navigator.clipboard.writeText(
+      this.previousElementSibling.firstElementChild.textContent
+    );
+    // tooltip.setContent({ '.tooltip-inner': 'copied !' });
+    this.style.backgroundColor = '#7ed321';
+    setTimeout(() => {
+      this.style.backgroundColor = '#4169e1';
+      this.firstElementChild.classList.replace('fa-check', 'fa-clipboard-list');
+      // tooltip.setContent({ '.tooltip-inner': 'copy to clip board' });
+    }, 500);
+  });
+  copyToClipBoardBtn.addEventListener('mouseenter', function () {
+    // tooltip.enable();
+  });
+  copyToClipBoardBtn.addEventListener('mouseleave', function () {
+    // tooltip.hide();
+  });
 });
 // ----------------------------------------------------------
+// --------------------------------------------------------------- gradient section ------------------------------
+// color pickers initial
+let gradientColorPickerLeft = new iro.ColorPicker(
+  '#gradient_color_picker_left',
+  {
+    width: 160,
+    color: '#4169e1',
+    borderWidth: 1,
+    borderColor: '#fff',
+    layout: [
+      {
+        component: iro.ui.Box,
+      },
+
+      {
+        component: iro.ui.Slider,
+        options: {
+          id: 'hue-slider',
+          sliderType: 'hue',
+        },
+      },
+      {
+        component: iro.ui.Slider,
+        options: {
+          sliderType: 'alpha',
+        },
+      },
+    ],
+  }
+);
+let gradientColorPickerRight = new iro.ColorPicker(
+  '#gradient_color_picker_right',
+  {
+    width: 160,
+    color: 'rgba(2,0,36,1)',
+    borderWidth: 1,
+    borderColor: '#fff',
+    layout: [
+      {
+        component: iro.ui.Box,
+      },
+
+      {
+        component: iro.ui.Slider,
+        options: {
+          id: 'hue-slider',
+          sliderType: 'hue',
+        },
+      },
+      {
+        component: iro.ui.Slider,
+        options: {
+          sliderType: 'alpha',
+        },
+      },
+    ],
+  }
+);
+//
+
+const gradientResultDisplay = $.querySelector('#gradient_result');
+const gradientAngleTool = $.querySelector('#gradient_angle');
+const gradientAngleSliderRange = $.querySelector('#gd_angle');
+const gradientClipboardResult = $.querySelector('#gradient_clipboard').firstElementChild.firstElementChild;
+let [gdType, degree, colorLeft, colorRight] = [
+  'linear',
+  243,
+  'rgba(2,0,36,1)',
+  'rgba(94,129,236,1)',
+];
+gradientClipboardResult.innerHTML = 'background: '+ `${gdType}-gradient(${
+  gdType === 'linear' ? degree + 'deg' : 'circle'
+},${colorLeft},${colorRight})`;
+
+gradientResultDisplay.style.background = `${gdType}-gradient(${
+  gdType === 'linear' ? degree + 'deg' : 'circle'
+},${colorLeft},${colorRight})`;
+
+const gradientSelectType = $.querySelector('#gradient_select');
+gradientSelectType.addEventListener('change', function () {
+  gdType = this.value;
+  // appear and disappear the angle section
+  if (gdType === 'radial') gradientAngleTool.style.transform = 'scale(0)';
+  else gradientAngleTool.style.transform = 'scale(1)';
+  //
+  // update gradient display degree in linear mode
+  gradientResultDisplay.style.background = `${gdType}-gradient(${
+    gdType === 'linear' ? degree + 'deg' : 'circle'
+  },${colorLeft},${colorRight})`;
+  //
+  gradientClipboardResult.innerHTML = 'background: '+ `${gdType}-gradient(${
+    gdType === 'linear' ? degree + 'deg' : 'circle'
+  },${colorLeft},${colorRight})`;
+  hljs.highlightAll();
+});
+//  update gradient display mode [linear , radial]
+gradientAngleSliderRange.addEventListener('input', function () {
+  degree = this.value;
+  // 
+  gradientResultDisplay.style.background = `${gdType}-gradient(${
+    gdType === 'linear' ? degree + 'deg' : 'circle'
+  },${colorLeft},${colorRight})`;
+  // 
+  gradientClipboardResult.innerHTML = 'background: '+ `${gdType}-gradient(${
+    gdType === 'linear' ? degree + 'deg' : 'circle'
+  },${colorLeft},${colorRight})`;
+  hljs.highlightAll();
+});
+//
+
+// update gradient color 
+// first color
+gradientColorPickerLeft.on(["color:init", "color:change"], function (color) {
+  colorLeft = color.rgbString;
+  gradientClipboardResult.innerHTML = 'background: '+ `${gdType}-gradient(${
+    gdType === 'linear' ? degree + 'deg' : 'circle'
+  },${colorLeft},${colorRight})`;
+  gradientResultDisplay.style.background = `${gdType}-gradient(${
+    gdType === 'linear' ? degree + 'deg' : 'circle'
+  },${colorLeft},${colorRight})`;
+  hljs.highlightAll();
+});
+// second color
+gradientColorPickerRight.on(["color:init", "color:change"], function (color) {
+  colorRight = color.rgbString;
+  gradientClipboardResult.innerHTML = 'background: '+ `${gdType}-gradient(${
+    gdType === 'linear' ? degree + 'deg' : 'circle'
+  },${colorLeft},${colorRight})`;
+  gradientResultDisplay.style.background = `${gdType}-gradient(${
+    gdType === 'linear' ? degree + 'deg' : 'circle'
+  },${colorLeft},${colorRight})`;
+  hljs.highlightAll();
+});

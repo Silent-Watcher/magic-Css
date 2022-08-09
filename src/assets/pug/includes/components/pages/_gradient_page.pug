@@ -1,0 +1,28 @@
+.container#gradient_page.page
+    .row.mt-4
+        section#gradient_result.col-8.offset-2 
+    .row.mt-4
+        section#gradient_color_left.col-3.d-flex.justify-content-center.align-items-center
+            #gradient_color_picker_left
+        section#gradient_type_tools.col-6.d-flex.justify-content-center.align-items-center.flex-column
+            section#gradient_type.d-flex.align-items-center
+                p.gradient_tool_title.mb-2.me-3.user-select-none Type 
+                select#gradient_select
+                    option(value="linear") linear 
+                    option(value="radial") radial
+            section#gradient_angle
+                p.gradient_tool_title.mb-0.mt-3.user-select-none Angle 
+                .slider_range
+                    span.value.left 0
+                    .wrapper_slider
+                        span.navigator 0
+                        input.slider_range_input#gd_angle(type='range' min='0' max='360' value='0')
+                    span.value.right 360
+            section#gradient_clipboard.position-relative.w-100.mt-3.text-center
+                pre
+                    code  background: linear-gradient(24deg, rgb(68, 9, 9), rgb(37, 172, 165));
+                button.copyToClipboardBtn.p-2.btn.btn-lg.border-0#copyGradient.position-absolute
+                    i.fa-solid.fa-clipboard-list
+        section#gradient_color_right.col-3.text-center.d-flex.justify-content-center.align-items-center
+            #gradient_color_picker_right
+

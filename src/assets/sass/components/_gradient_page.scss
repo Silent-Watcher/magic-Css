@@ -1,0 +1,49 @@
+#gradient_page{
+    #gradient_result{
+        height: 300px;
+        border-radius: 10px;
+        box-shadow:0 .5rem 1rem rgba(0,0,0,.15);
+    }
+    #gradient_color_left{
+        #gradient_color_picker_left{}
+    }
+    
+    #gradient_color_right{
+        #gradient_color_picker_right{}
+    }
+    
+    #gradient_type_tools{
+        font-size: 16px;
+        #gradient_type{
+            > p{
+    
+            }
+            #gradient_select{
+                border-radius: 1px;
+                cursor: pointer;
+                outline: 0;
+                background-color: #4169e1;
+                color: #f5f5f5;
+                border: 1px solid #4169e1;
+            }
+        }
+        #gradient_angle{
+            text-align: center;
+            font-size: 14px;
+            transition: transform .3s ease-in;
+            transform: scale(1);
+            > .slider_range{
+                height: 40px;
+                >.value{
+                    font-size: 12px;
+                    &.left{
+                        margin-right: 5px;
+                    }
+                }
+            }   
+        }
+        #gradient_clipboard{
+    
+        }
+    }
+}

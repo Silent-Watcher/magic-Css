@@ -27,7 +27,7 @@
         </header>
       </div>
     </div>
-    <div class="container page position-absolute top-25 start-0 end-0" id="boxShadowMagic__page">
+    <div class="container page" id="boxShadowMagic__page" hidden>
       <div class="row h-100"> 
         <section class="col-8" id="boxShadowMagic_tools">
           <div class="row h-100"> 
@@ -97,8 +97,42 @@
           <section class="d-inline-block" id="boxShadowMagic_sample"></section>
           <section class="mt-auto position-relative" id="bxsh_result_display">
             <pre><code> </code></pre>
-            <button class="copyToClipboard p-2 btn btn-lg border-0 position-absolute" id="copyBxsh"><i class="fa-solid fa-clipboard-list"></i></button>
+            <button class="copyToClipboardBtn p-2 btn btn-lg border-0 position-absolute" id="copyBxsh"><i class="fa-solid fa-clipboard-list"></i></button>
           </section>
+        </section>
+      </div>
+    </div>
+    <div class="container page" id="gradient_page">
+      <div class="row mt-4">
+        <section class="col-8 offset-2" id="gradient_result"> </section>
+      </div>
+      <div class="row mt-4">
+        <section class="col-3 d-flex justify-content-center align-items-center" id="gradient_color_left">
+          <div id="gradient_color_picker_left"></div>
+        </section>
+        <section class="col-6 d-flex justify-content-center align-items-center flex-column" id="gradient_type_tools">
+          <section class="d-flex align-items-center" id="gradient_type">
+            <p class="gradient_tool_title mb-2 me-3 user-select-none">Type </p>
+            <select id="gradient_select">
+              <option value="linear">linear </option>
+              <option value="radial">radial</option>
+            </select>
+          </section>
+          <section id="gradient_angle">
+            <p class="gradient_tool_title mb-0 mt-3 user-select-none">Angle </p>
+            <div class="slider_range"><span class="value left">0</span>
+              <div class="wrapper_slider"><span class="navigator">0</span>
+                <input class="slider_range_input" id="gd_angle" type="range" min="0" max="360" value="0">
+              </div><span class="value right">360</span>
+            </div>
+          </section>
+          <section class="position-relative w-100 mt-3 text-center" id="gradient_clipboard">
+            <pre><code> background: linear-gradient(24deg, rgb(68, 9, 9), rgb(37, 172, 165));</code></pre>
+            <button class="copyToClipboardBtn p-2 btn btn-lg border-0 position-absolute" id="copyGradient"><i class="fa-solid fa-clipboard-list"></i></button>
+          </section>
+        </section>
+        <section class="col-3 text-center d-flex justify-content-center align-items-center" id="gradient_color_right">
+          <div id="gradient_color_picker_right"></div>
         </section>
       </div>
     </div>

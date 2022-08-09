@@ -38,10 +38,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
@@ -133,6 +129,37 @@ input[type=number] {
   cursor: pointer;
 }
 
+#gradient_page #gradient_result {
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+#gradient_page #gradient_type_tools {
+  font-size: 16px;
+}
+#gradient_page #gradient_type_tools #gradient_type #gradient_select {
+  border-radius: 1px;
+  cursor: pointer;
+  outline: 0;
+  background-color: #4169e1;
+  color: #f5f5f5;
+  border: 1px solid #4169e1;
+}
+#gradient_page #gradient_type_tools #gradient_angle {
+  text-align: center;
+  font-size: 14px;
+  transition: transform 0.3s ease-in;
+  transform: scale(1);
+}
+#gradient_page #gradient_type_tools #gradient_angle > .slider_range {
+  height: 40px;
+}
+#gradient_page #gradient_type_tools #gradient_angle > .slider_range > .value {
+  font-size: 12px;
+}
+#gradient_page #gradient_type_tools #gradient_angle > .slider_range > .value.left {
+  margin-right: 5px;
+}
 #title_section #magic_stick {
   top: -6px;
   left: 57%;
@@ -240,20 +267,7 @@ input[type=number] {
   display: inline-block;
 }
 #boxShadowMagic__page #boxShadowMagic_result #bxsh_result_display {
-  font-size: 20px;
-}
-#boxShadowMagic__page #boxShadowMagic_result #copyBxsh {
-  background-color: #4169e1;
-  top: -14px;
-  right: 10px;
-  transform: scale(0);
-  font-size: 12px;
-  transition: all 0.3s ease-in-out;
-  color: #f5f5f5;
-  font-size: 10px;
-}
-#boxShadowMagic__page #boxShadowMagic_result #copyBxsh:hover {
-  background-color: #2f56ca;
+  font-size: 16px;
 }
 #boxShadowMagic__page #boxShadowMagic_result #boxShadowMagic_sample {
   margin-top: 200px;
@@ -272,4 +286,18 @@ input[type=number] {
 #bxsh_inset_input + label {
   cursor: pointer;
   font-size: 16px;
+}
+
+.copyToClipboardBtn {
+  background-color: #4169e1;
+  top: -14px;
+  right: 10px;
+  transform: scale(0);
+  font-size: 12px;
+  transition: all 0.3s ease-in-out;
+  color: #f5f5f5 !important;
+  font-size: 10px;
+}
+.copyToClipboardBtn:hover {
+  background-color: #2f56ca;
 }/*# sourceMappingURL=style.css.map */
