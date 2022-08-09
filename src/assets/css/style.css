@@ -300,4 +300,18 @@ input[type=number] {
 }
 .copyToClipboardBtn:hover {
   background-color: #2f56ca;
+}
+
+#gd__ColorInfo__right input,
+#gd__ColorInfo__right label, #gd__ColorInfo__left input,
+#gd__ColorInfo__left label {
+  outline: 0;
+  text-align: center;
+  font-size: 12px;
+  width: 50px;
+}
+#gd__ColorInfo__right input:nth-of-type(1),
+#gd__ColorInfo__right label:nth-of-type(1), #gd__ColorInfo__left input:nth-of-type(1),
+#gd__ColorInfo__left label:nth-of-type(1) {
+  width: 80px;
 }/*# sourceMappingURL=style.css.map */

@@ -7,6 +7,8 @@ const sliders = $.querySelectorAll('.rangeSliders');
 const bxshBox = $.querySelector('#boxShadowMagic_sample');
 const bxshResultDisplay = $.querySelector('#bxsh_result_display');
 const bxshResultBtn = bxshResultDisplay.lastElementChild;
+const gdColorInfoRight = $.querySelector('#gd__ColorInfo__right');
+const gdColorInfoLeft = $.querySelector('#gd__ColorInfo__left');
 
 let bxshSliderRanges = $.querySelectorAll('.bxsh_slider_range');
 let [xBxsh, yBxsh, blurBxsh, spreadBxsh, colorBxsh] = [0, 0, 0, 0, '#5e81ec'];
@@ -248,16 +250,19 @@ let gradientColorPickerRight = new iro.ColorPicker(
 const gradientResultDisplay = $.querySelector('#gradient_result');
 const gradientAngleTool = $.querySelector('#gradient_angle');
 const gradientAngleSliderRange = $.querySelector('#gd_angle');
-const gradientClipboardResult = $.querySelector('#gradient_clipboard').firstElementChild.firstElementChild;
+const gradientClipboardResult = $.querySelector('#gradient_clipboard')
+  .firstElementChild.firstElementChild;
 let [gdType, degree, colorLeft, colorRight] = [
   'linear',
   243,
   'rgba(2,0,36,1)',
   'rgba(94,129,236,1)',
 ];
-gradientClipboardResult.innerHTML = 'background: '+ `${gdType}-gradient(${
-  gdType === 'linear' ? degree + 'deg' : 'circle'
-},${colorLeft},${colorRight})`;
+gradientClipboardResult.innerHTML =
+  'background: ' +
+  `${gdType}-gradient(${
+    gdType === 'linear' ? degree + 'deg' : 'circle'
+  },${colorLeft},${colorRight})`;
 
 gradientResultDisplay.style.background = `${gdType}-gradient(${
   gdType === 'linear' ? degree + 'deg' : 'circle'
@@ -275,46 +280,62 @@ gradientSelectType.addEventListener('change', function () {
     gdType === 'linear' ? degree + 'deg' : 'circle'
   },${colorLeft},${colorRight})`;
   //
-  gradientClipboardResult.innerHTML = 'background: '+ `${gdType}-gradient(${
-    gdType === 'linear' ? degree + 'deg' : 'circle'
-  },${colorLeft},${colorRight})`;
+  gradientClipboardResult.innerHTML =
+    'background: ' +
+    `${gdType}-gradient(${
+      gdType === 'linear' ? degree + 'deg' : 'circle'
+    },${colorLeft},${colorRight})`;
   hljs.highlightAll();
 });
 //  update gradient display mode [linear , radial]
 gradientAngleSliderRange.addEventListener('input', function () {
   degree = this.value;
-  // 
+  //
   gradientResultDisplay.style.background = `${gdType}-gradient(${
     gdType === 'linear' ? degree + 'deg' : 'circle'
   },${colorLeft},${colorRight})`;
-  // 
-  gradientClipboardResult.innerHTML = 'background: '+ `${gdType}-gradient(${
-    gdType === 'linear' ? degree + 'deg' : 'circle'
-  },${colorLeft},${colorRight})`;
+  //
+  gradientClipboardResult.innerHTML =
+    'background: ' +
+    `${gdType}-gradient(${
+      gdType === 'linear' ? degree + 'deg' : 'circle'
+    },${colorLeft},${colorRight})`;
   hljs.highlightAll();
 });
 //
-
-// update gradient color 
+// update gradient color
 // first color
-gradientColorPickerLeft.on(["color:init", "color:change"], function (color) {
+gradientColorPickerLeft.on(['color:init', 'color:change'], function (color) {
+  $.querySelector('#gd_hex_left').value = color.hexString;
+  $.querySelector('#gd_r_left').value = getRGB(color.rgbString)[0];
+  $.querySelector('#gd_g_left').value = getRGB(color.rgbString)[1];
+  $.querySelector('#gd_b_left').value = getRGB(color.rgbString)[2];
   colorLeft = color.rgbString;
-  gradientClipboardResult.innerHTML = 'background: '+ `${gdType}-gradient(${
-    gdType === 'linear' ? degree + 'deg' : 'circle'
-  },${colorLeft},${colorRight})`;
+  gradientClipboardResult.innerHTML =
+    'background: ' +
+    `${gdType}-gradient(${
+      gdType === 'linear' ? degree + 'deg' : 'circle'
+    },${colorLeft},${colorRight})`;
   gradientResultDisplay.style.background = `${gdType}-gradient(${
     gdType === 'linear' ? degree + 'deg' : 'circle'
   },${colorLeft},${colorRight})`;
   hljs.highlightAll();
 });
 // second color
-gradientColorPickerRight.on(["color:init", "color:change"], function (color) {
+gradientColorPickerRight.on(['color:init', 'color:change'], function (color) {
+  $.querySelector('#gd_hex_right').value = color.hexString;
+  $.querySelector('#gd_r_right').value = getRGB(color.rgbString)[0];
+  $.querySelector('#gd_g_right').value = getRGB(color.rgbString)[1];
+  $.querySelector('#gd_b_right').value = getRGB(color.rgbString)[2];
   colorRight = color.rgbString;
-  gradientClipboardResult.innerHTML = 'background: '+ `${gdType}-gradient(${
-    gdType === 'linear' ? degree + 'deg' : 'circle'
-  },${colorLeft},${colorRight})`;
+  gradientClipboardResult.innerHTML =
+    'background: ' +
+    `${gdType}-gradient(${
+      gdType === 'linear' ? degree + 'deg' : 'circle'
+    },${colorLeft},${colorRight})`;
   gradientResultDisplay.style.background = `${gdType}-gradient(${
     gdType === 'linear' ? degree + 'deg' : 'circle'
   },${colorLeft},${colorRight})`;
   hljs.highlightAll();
 });
+

@@ -107,8 +107,24 @@
         <section class="col-8 offset-2" id="gradient_result"> </section>
       </div>
       <div class="row mt-4">
-        <section class="col-3 d-flex justify-content-center align-items-center" id="gradient_color_left">
+        <section class="col-3 d-flex justify-content-center align-items-center flex-column" id="gradient_color_left">
           <div id="gradient_color_picker_left"></div>
+          <section class="d-flex flex-column mt-3" id="gd__ColorInfo__left">
+            <div class="wrapper d-flex">
+              <input class="hex__color d-inline-block" id="gd_hex_left" type="text" name="" value="#4169e1" readonly>
+              <input class="r__color d-inline-block" id="gd_r_left" type="number" name="" value="65" max="255" min="0" readonly>
+              <input class="g__color d-inline-block" id="gd_g_left" type="number" name="" value="105" max="255" min="0" readonly>
+              <input class="b__color d-inline-block" id="gd_b_left" type="number" name="" value="225" max="255" min="0" readonly>
+              <input class="a__color d-inline-block" id="gd_a_left" type="number" name="" value="0" max="255" min="0" readonly>
+            </div>
+            <div class="wrapper d-flex">
+              <label for="gd_hex_left">Hex</label>
+              <label for="gd_r_left">R</label>
+              <label for="gd_g_left">G</label>
+              <label for="gd_b_left">B</label>
+              <label for="gd_a_left">A</label>
+            </div>
+          </section>
         </section>
         <section class="col-6 d-flex justify-content-center align-items-center flex-column" id="gradient_type_tools">
           <section class="d-flex align-items-center" id="gradient_type">
@@ -131,8 +147,24 @@
             <button class="copyToClipboardBtn p-2 btn btn-lg border-0 position-absolute" id="copyGradient"><i class="fa-solid fa-clipboard-list"></i></button>
           </section>
         </section>
-        <section class="col-3 text-center d-flex justify-content-center align-items-center" id="gradient_color_right">
+        <section class="col-3 text-center d-flex justify-content-center align-items-center flex-column" id="gradient_color_right">
           <div id="gradient_color_picker_right"></div>
+          <section class="d-flex flex-column mt-3" id="gd__ColorInfo__right">
+            <div class="wrapper d-flex">
+              <input class="hex__color d-inline-block" id="gd_hex_right" type="text" name="" value="#4169e1" readonly>
+              <input class="r__color d-inline-block" id="gd_r_right" type="number" name="" value="65" max="255" min="0" readonly>
+              <input class="g__color d-inline-block" id="gd_g_right" type="number" name="" value="105" max="255" min="0" readonly>
+              <input class="b__color d-inline-block" id="gd_b_right" type="number" name="" value="225" max="255" min="0" readonly>
+              <input class="a__color d-inline-block" id="gd_a_right" type="number" name="" value="0" max="255" min="0" readonly>
+            </div>
+            <div class="wrapper d-flex">
+              <label for="gd_hex_right">Hex</label>
+              <label for="gd_r_right">R</label>
+              <label for="gd_g_right">G</label>
+              <label for="gd_b_right">B</label>
+              <label for="gd_a_right">A</label>
+            </div>
+          </section>
         </section>
       </div>
     </div>
