@@ -4,8 +4,21 @@
             label(for="txt_sh_input").position-absolute Text
             input#txt_sh_input(type="text").w-100.h-100
     .row
-        section#txtShadow_color.col-4.d-flex.justify-content-center
+        section#txtShadow_color.col-4.d-flex.justify-content-center.flex-column
             #txtShadow_color_picker
+            section#txtShadow__ColorInfo.d-flex.flex-column.mt-3
+                .wrapper.d-flex
+                    input.hex__color#txtsh_hex(type="text", name="" value='#4169e1' readonly).d-inline-block
+                    input.r__color#txtsh_r(type="number", name="" value='65' max='255' min='0' readonly).d-inline-block
+                    input.g__color#txtsh_g(type="number", name="" value='105' max='255' min='0' readonly).d-inline-block
+                    input.b__color#txtsh_b(type="number", name="" value='225' max='255' min='0' readonly).d-inline-block
+                    input.a__color#txtsh_a(type="number", name="" value='0' max='255' min='0' readonly).d-inline-block
+                .wrapper.d-flex
+                    label(for="txtsh_hex") Hex
+                    label(for="txtsh_r") R
+                    label(for="txtsh_g") G
+                    label(for="txtsh_b") B
+                    label(for="txtsh_a") A
         section#txtShadow_tools.col-4 
             section#x_txtShadow
                 p.mb-0.fs-4 X 
@@ -28,14 +41,14 @@
                     span.value.left 0
                     .wrapper_slider
                         span.navigator 0
-                        input.slider_range_input#y_txtsh(type='range' min='0' max='30' value='0')
+                        input.slider_range_input#blur_txtsh(type='range' min='0' max='30' value='0')
                     span.value.right 30
         section#txtShadow_result_display.col-4.mt-4.d-flex.justify-content-center.align-items-center
             p#txtShadow_result_txt.fs-3 magic css
     .row 
-        section#gradient_clipboard.position-relative.col-6.offset-3.mt-5.text-center
+        section#txtShadow_clipboard.position-relative.col-4.offset-4.mt-5.text-center
                 pre
                     code  background: linear-gradient(24deg, rgb(68, 9, 9), rgb(37, 172, 165));
-                button.copyToClipboardBtn.p-2.btn.btn-lg.border-0#copyGradient.position-absolute
+                button.copyToClipboardBtn.p-2.btn.btn-lg.border-0#copytxtShadow.position-absolute
                     i.fa-solid.fa-clipboard-list 
 

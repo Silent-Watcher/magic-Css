@@ -191,7 +191,7 @@ input[type=number] {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 #txtShadow_page #txtShadow_result_display #txtShadow_result_txt {
-  text-shadow: #5e81ec 40px 40px 12px;
+  text-shadow: #5e81ec 0px 0px 0px;
 }
 
 .active_label {
@@ -349,7 +349,8 @@ input[type=number] {
 
 #gd__ColorInfo__right input,
 #gd__ColorInfo__right label, #gd__ColorInfo__left input,
-#gd__ColorInfo__left label {
+#gd__ColorInfo__left label, #txtShadow__ColorInfo input,
+#txtShadow__ColorInfo label {
   outline: 0;
   text-align: center;
   font-size: 12px;
@@ -357,6 +358,7 @@ input[type=number] {
 }
 #gd__ColorInfo__right input:nth-of-type(1),
 #gd__ColorInfo__right label:nth-of-type(1), #gd__ColorInfo__left input:nth-of-type(1),
-#gd__ColorInfo__left label:nth-of-type(1) {
+#gd__ColorInfo__left label:nth-of-type(1), #txtShadow__ColorInfo input:nth-of-type(1),
+#txtShadow__ColorInfo label:nth-of-type(1) {
   width: 80px;
 }/*# sourceMappingURL=style.css.map */

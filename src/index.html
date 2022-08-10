@@ -176,8 +176,24 @@
         </section>
       </div>
       <div class="row">
-        <section class="col-4 d-flex justify-content-center" id="txtShadow_color">
+        <section class="col-4 d-flex justify-content-center flex-column" id="txtShadow_color">
           <div id="txtShadow_color_picker"></div>
+          <section class="d-flex flex-column mt-3" id="txtShadow__ColorInfo">
+            <div class="wrapper d-flex">
+              <input class="hex__color d-inline-block" id="txtsh_hex" type="text" name="" value="#4169e1" readonly>
+              <input class="r__color d-inline-block" id="txtsh_r" type="number" name="" value="65" max="255" min="0" readonly>
+              <input class="g__color d-inline-block" id="txtsh_g" type="number" name="" value="105" max="255" min="0" readonly>
+              <input class="b__color d-inline-block" id="txtsh_b" type="number" name="" value="225" max="255" min="0" readonly>
+              <input class="a__color d-inline-block" id="txtsh_a" type="number" name="" value="0" max="255" min="0" readonly>
+            </div>
+            <div class="wrapper d-flex">
+              <label for="txtsh_hex">Hex</label>
+              <label for="txtsh_r">R</label>
+              <label for="txtsh_g">G</label>
+              <label for="txtsh_b">B</label>
+              <label for="txtsh_a">A</label>
+            </div>
+          </section>
         </section>
         <section class="col-4" id="txtShadow_tools"> 
           <section id="x_txtShadow">
@@ -198,7 +214,7 @@
             <p class="mb-0 fs-4">Blur</p>
             <div class="slider_range txtsh_slider_range justify-content-start"><span class="value left">0</span>
               <div class="wrapper_slider"><span class="navigator">0</span>
-                <input class="slider_range_input" id="y_txtsh" type="range" min="0" max="30" value="0">
+                <input class="slider_range_input" id="blur_txtsh" type="range" min="0" max="30" value="0">
               </div><span class="value right">30</span>
             </div>
           </section>
@@ -208,9 +224,9 @@
         </section>
       </div>
       <div class="row"> 
-        <section class="position-relative col-6 offset-3 mt-5 text-center" id="gradient_clipboard">
+        <section class="position-relative col-4 offset-4 mt-5 text-center" id="txtShadow_clipboard">
           <pre><code> background: linear-gradient(24deg, rgb(68, 9, 9), rgb(37, 172, 165));</code></pre>
-          <button class="copyToClipboardBtn p-2 btn btn-lg border-0 position-absolute" id="copyGradient"><i class="fa-solid fa-clipboard-list"> </i></button>
+          <button class="copyToClipboardBtn p-2 btn btn-lg border-0 position-absolute" id="copytxtShadow"><i class="fa-solid fa-clipboard-list"> </i></button>
         </section>
       </div>
     </div>

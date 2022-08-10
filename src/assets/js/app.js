@@ -343,6 +343,12 @@ const txtShadowInput = $.querySelector('#txtShadow_input').lastElementChild;
 const txtShadowLabel = txtShadowInput.previousElementSibling;
 const txtShadowResultDisplay = $.querySelector('#txtShadow_result_display');
 const txtShadowColor = $.querySelector('#txtShadow_color');
+const txtShadowClipboard = $.querySelector('#txtShadow_clipboard');
+const txtShadowClipboardTxt =
+  txtShadowClipboard.firstElementChild.firstElementChild;
+const txtShadowSliderRanges = $.querySelectorAll('.txtsh_slider_range');
+
+let [x_txt_sh, y_txt_sh, blur_txt_sh, color_txt_sh] = [40, 35, 12, '#5e81ec'];
 // moving label effect
 txtShadowInput.addEventListener('focus', function () {
   txtShadowLabel.classList.add('active_label');
@@ -360,18 +366,64 @@ txtShadowInput.addEventListener('blur', function () {
 txtShadowInput.addEventListener('input', function () {
   txtShadowResultDisplay.firstElementChild.innerHTML = this.value;
 });
-// initial txt shadow color picker 
-let txtShadowColorPicker = new iro.ColorPicker(txtShadowColor.firstElementChild , {
-  width: 250,
-  color: "#5e81ec",
-  borderWidth: 1,
-  borderColor: "#fff",
-  layout: [
+// initial txt shadow color picker
+let txtShadowColorPicker = new iro.ColorPicker(
+  txtShadowColor.firstElementChild,
   {
-    component: iro.ui.Box },
-  {
-    component: iro.ui.Slider,
-    options: {
-      id: 'hue-slider',
-      sliderType: 'hue' } }] });
-// 
+    width: 250,
+    color: '#5e81ec',
+    borderWidth: 1,
+    borderColor: '#fff',
+    layout: [
+      {
+        component: iro.ui.Box,
+      },
+      {
+        component: iro.ui.Slider,
+        options: {
+          id: 'hue-slider',
+          sliderType: 'hue',
+        },
+      },
+    ],
+  }
+);
+// Initial quantification
+txtShadowClipboardTxt.innerHTML =
+  'text-shadow: ' +
+  `${x_txt_sh}px ${y_txt_sh}px ${blur_txt_sh}px ${color_txt_sh}`;
+// change the text shadow value dynamically
+txtShadowSliderRanges.forEach((txtShadowSliderRange) => {
+  txtShadowSliderRange.firstElementChild.nextElementSibling.lastElementChild.addEventListener(
+    'input',
+    function () {
+      if (this.id === 'x_txtsh') {
+        x_txt_sh = this.value;
+      }
+      if (this.id === 'y_txtsh') {
+        y_txt_sh = this.value;
+      }
+      if (this.id === 'blur_txtsh') {
+        blur_txt_sh = this.value;
+      }
+      txtShadowResultDisplay.firstElementChild.style.textShadow = `${x_txt_sh}px ${y_txt_sh}px ${blur_txt_sh}px ${color_txt_sh}`;
+      txtShadowClipboardTxt.innerHTML =
+        'text-shadow: ' +
+        `${x_txt_sh}px ${y_txt_sh}px ${blur_txt_sh}px ${color_txt_sh}`;
+      hljs.highlightAll();
+    }
+  );
+});
+//
+txtShadowColorPicker.on(['color:init', 'color:change'], function (color) {
+  $.querySelector('#txtsh_hex').value = color.hexString;
+  $.querySelector('#txtsh_r').value = getRGB(color.rgbString)[0];
+  $.querySelector('#txtsh_g').value = getRGB(color.rgbString)[1];
+  $.querySelector('#txtsh_b').value = getRGB(color.rgbString)[2];
+  color_txt_sh = color.hexString;
+  txtShadowResultDisplay.firstElementChild.style.textShadow = `${x_txt_sh}px ${y_txt_sh}px ${blur_txt_sh}px ${color_txt_sh}`;
+  txtShadowClipboardTxt.innerHTML =
+    'text-shadow: ' +
+    `${x_txt_sh}px ${y_txt_sh}px ${blur_txt_sh}px ${color_txt_sh}`;
+  hljs.highlightAll();
+});
