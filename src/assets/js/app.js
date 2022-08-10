@@ -9,7 +9,7 @@ const bxshResultDisplay = $.querySelector('#bxsh_result_display');
 const bxshResultBtn = bxshResultDisplay.lastElementChild;
 const gdColorInfoRight = $.querySelector('#gd__ColorInfo__right');
 const gdColorInfoLeft = $.querySelector('#gd__ColorInfo__left');
-
+//
 let bxshSliderRanges = $.querySelectorAll('.bxsh_slider_range');
 let [xBxsh, yBxsh, blurBxsh, spreadBxsh, colorBxsh] = [0, 0, 0, 0, '#5e81ec'];
 // color picker initialization for magic box shadow
@@ -49,6 +49,17 @@ let boxShadowSliderPicker = new iro.ColorPicker(
   }
 );
 //
+const gradientResultDisplay = $.querySelector('#gradient_result');
+const gradientAngleTool = $.querySelector('#gradient_angle');
+const gradientAngleSliderRange = $.querySelector('#gd_angle');
+const gradientClipboardResult = $.querySelector('#gradient_clipboard')
+  .firstElementChild.firstElementChild;
+let [gdType, degree, colorLeft, colorRight] = [
+  'linear',
+  243,
+  'rgba(2,0,36,1)',
+  'rgba(94,129,236,1)',
+];
 // initial alert
 const Toast = Swal.mixin({
   toast: true,
@@ -247,17 +258,6 @@ let gradientColorPickerRight = new iro.ColorPicker(
 );
 //
 
-const gradientResultDisplay = $.querySelector('#gradient_result');
-const gradientAngleTool = $.querySelector('#gradient_angle');
-const gradientAngleSliderRange = $.querySelector('#gd_angle');
-const gradientClipboardResult = $.querySelector('#gradient_clipboard')
-  .firstElementChild.firstElementChild;
-let [gdType, degree, colorLeft, colorRight] = [
-  'linear',
-  243,
-  'rgba(2,0,36,1)',
-  'rgba(94,129,236,1)',
-];
 gradientClipboardResult.innerHTML =
   'background: ' +
   `${gdType}-gradient(${
@@ -338,4 +338,40 @@ gradientColorPickerRight.on(['color:init', 'color:change'], function (color) {
   },${colorLeft},${colorRight})`;
   hljs.highlightAll();
 });
+// --------------------------------------------------------------- txt shadow section ------------------------------
+const txtShadowInput = $.querySelector('#txtShadow_input').lastElementChild;
+const txtShadowLabel = txtShadowInput.previousElementSibling;
+const txtShadowResultDisplay = $.querySelector('#txtShadow_result_display');
+const txtShadowColor = $.querySelector('#txtShadow_color');
+// moving label effect
+txtShadowInput.addEventListener('focus', function () {
+  txtShadowLabel.classList.add('active_label');
 
+  this.style.borderColor = '#5e81ec';
+});
+txtShadowInput.addEventListener('blur', function () {
+  if (txtShadowInput.value.trim() !== '')
+    txtShadowLabel.classList.add('filled');
+  else txtShadowLabel.classList.remove('filled');
+  txtShadowLabel.classList.remove('active_label');
+  this.style.borderColor = '#232323';
+});
+// change display text  dynamically
+txtShadowInput.addEventListener('input', function () {
+  txtShadowResultDisplay.firstElementChild.innerHTML = this.value;
+});
+// initial txt shadow color picker 
+let txtShadowColorPicker = new iro.ColorPicker(txtShadowColor.firstElementChild , {
+  width: 250,
+  color: "#5e81ec",
+  borderWidth: 1,
+  borderColor: "#fff",
+  layout: [
+  {
+    component: iro.ui.Box },
+  {
+    component: iro.ui.Slider,
+    options: {
+      id: 'hue-slider',
+      sliderType: 'hue' } }] });
+// 

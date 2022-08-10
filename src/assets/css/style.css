@@ -160,6 +160,51 @@ input[type=number] {
 #gradient_page #gradient_type_tools #gradient_angle > .slider_range > .value.left {
   margin-right: 5px;
 }
+#txtShadow_page #txtShadow_input > input {
+  outline: 0;
+  font-size: 18px;
+  background-color: inherit;
+  padding: 5px 12px;
+  border: 2px solid #232323;
+  border-radius: 5px;
+}
+#txtShadow_page #txtShadow_input > label {
+  transition: 0.2s ease;
+  top: 7px;
+  left: 23px;
+  background-color: inherit;
+  z-index: 2;
+  cursor: pointer;
+}
+#txtShadow_page #txtShadow_input > label::after {
+  top: 50%;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: #f5f5f5;
+  z-index: -1;
+}
+#txtShadow_page #txtShadow_result_display {
+  height: 250px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+#txtShadow_page #txtShadow_result_display #txtShadow_result_txt {
+  text-shadow: #5e81ec 40px 40px 12px;
+}
+
+.active_label {
+  top: -12px !important;
+  left: 17px !important;
+  color: #5e81ec;
+}
+
+.filled {
+  top: -12px !important;
+  left: 17px !important;
+}
+
 #title_section #magic_stick {
   top: -6px;
   left: 57%;

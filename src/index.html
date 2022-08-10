@@ -102,7 +102,7 @@
         </section>
       </div>
     </div>
-    <div class="container page" id="gradient_page">
+    <div class="container page" id="gradient_page" hidden>
       <div class="row mt-4">
         <section class="col-8 offset-2" id="gradient_result"> </section>
       </div>
@@ -165,6 +165,52 @@
               <label for="gd_a_right">A</label>
             </div>
           </section>
+        </section>
+      </div>
+    </div>
+    <div class="container page d-flex flex-column justify-content-center" id="txtShadow_page">
+      <div class="row"> 
+        <section class="text-center col-2 offset-5 mt-5 position-relative" id="txtShadow_input">
+          <label class="position-absolute" for="txt_sh_input">Text</label>
+          <input class="w-100 h-100" id="txt_sh_input" type="text">
+        </section>
+      </div>
+      <div class="row">
+        <section class="col-4 d-flex justify-content-center" id="txtShadow_color">
+          <div id="txtShadow_color_picker"></div>
+        </section>
+        <section class="col-4" id="txtShadow_tools"> 
+          <section id="x_txtShadow">
+            <p class="mb-0 fs-4">X </p>
+            <div class="slider_range txtsh_slider_range justify-content-start"><span class="value left">-40</span>
+              <div class="wrapper_slider"><span class="navigator">0</span>
+                <input class="slider_range_input" id="x_txtsh" type="range" min="-40" max="40" value="0">
+              </div><span class="value right">40</span>
+            </div>
+          </section>
+          <section id="y_txtShadow">
+            <p class="mb-0 fs-4">Y </p>
+            <div class="slider_range txtsh_slider_range justify-content-start"><span class="value left">-40</span>
+              <div class="wrapper_slider"><span class="navigator">0</span>
+                <input class="slider_range_input" id="y_txtsh" type="range" min="-40" max="40" value="0">
+              </div><span class="value right">40</span>
+            </div>
+            <p class="mb-0 fs-4">Blur</p>
+            <div class="slider_range txtsh_slider_range justify-content-start"><span class="value left">0</span>
+              <div class="wrapper_slider"><span class="navigator">0</span>
+                <input class="slider_range_input" id="y_txtsh" type="range" min="0" max="30" value="0">
+              </div><span class="value right">30</span>
+            </div>
+          </section>
+        </section>
+        <section class="col-4 mt-4 d-flex justify-content-center align-items-center" id="txtShadow_result_display">
+          <p class="fs-3" id="txtShadow_result_txt">magic css</p>
+        </section>
+      </div>
+      <div class="row"> 
+        <section class="position-relative col-6 offset-3 mt-5 text-center" id="gradient_clipboard">
+          <pre><code> background: linear-gradient(24deg, rgb(68, 9, 9), rgb(37, 172, 165));</code></pre>
+          <button class="copyToClipboardBtn p-2 btn btn-lg border-0 position-absolute" id="copyGradient"><i class="fa-solid fa-clipboard-list"> </i></button>
         </section>
       </div>
     </div>

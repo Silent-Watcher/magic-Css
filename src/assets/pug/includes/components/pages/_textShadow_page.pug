@@ -1,0 +1,41 @@
+.container#txtShadow_page.page.d-flex.flex-column.justify-content-center
+    .row 
+        section#txtShadow_input.text-center.col-2.offset-5.mt-5.position-relative
+            label(for="txt_sh_input").position-absolute Text
+            input#txt_sh_input(type="text").w-100.h-100
+    .row
+        section#txtShadow_color.col-4.d-flex.justify-content-center
+            #txtShadow_color_picker
+        section#txtShadow_tools.col-4 
+            section#x_txtShadow
+                p.mb-0.fs-4 X 
+                .slider_range.txtsh_slider_range.justify-content-start
+                    span.value.left -40
+                    .wrapper_slider
+                        span.navigator 0
+                        input.slider_range_input#x_txtsh(type='range' min='-40' max='40' value='0')
+                    span.value.right 40
+            section#y_txtShadow
+                p.mb-0.fs-4 Y 
+                .slider_range.txtsh_slider_range.justify-content-start
+                    span.value.left -40
+                    .wrapper_slider
+                        span.navigator 0
+                        input.slider_range_input#y_txtsh(type='range' min='-40' max='40' value='0')
+                    span.value.right 40
+                p.mb-0.fs-4 Blur
+                .slider_range.txtsh_slider_range.justify-content-start
+                    span.value.left 0
+                    .wrapper_slider
+                        span.navigator 0
+                        input.slider_range_input#y_txtsh(type='range' min='0' max='30' value='0')
+                    span.value.right 30
+        section#txtShadow_result_display.col-4.mt-4.d-flex.justify-content-center.align-items-center
+            p#txtShadow_result_txt.fs-3 magic css
+    .row 
+        section#gradient_clipboard.position-relative.col-6.offset-3.mt-5.text-center
+                pre
+                    code  background: linear-gradient(24deg, rgb(68, 9, 9), rgb(37, 172, 165));
+                button.copyToClipboardBtn.p-2.btn.btn-lg.border-0#copyGradient.position-absolute
+                    i.fa-solid.fa-clipboard-list 
+
