@@ -60,6 +60,17 @@ let [gdType, degree, colorLeft, colorRight] = [
   'rgba(2,0,36,1)',
   'rgba(94,129,236,1)',
 ];
+//
+const txtShadowInput = $.querySelector('#txtShadow_input').lastElementChild;
+const txtShadowLabel = txtShadowInput.previousElementSibling;
+const txtShadowResultDisplay = $.querySelector('#txtShadow_result_display');
+const txtShadowColor = $.querySelector('#txtShadow_color');
+const txtShadowClipboard = $.querySelector('#txtShadow_clipboard');
+const txtShadowClipboardTxt =
+  txtShadowClipboard.firstElementChild.firstElementChild;
+const txtShadowSliderRanges = $.querySelectorAll('.txtsh_slider_range');
+
+let [x_txt_sh, y_txt_sh, blur_txt_sh, color_txt_sh] = [40, 35, 12, '#5e81ec'];
 // initial alert
 const Toast = Swal.mixin({
   toast: true,
@@ -339,16 +350,6 @@ gradientColorPickerRight.on(['color:init', 'color:change'], function (color) {
   hljs.highlightAll();
 });
 // --------------------------------------------------------------- txt shadow section ------------------------------
-const txtShadowInput = $.querySelector('#txtShadow_input').lastElementChild;
-const txtShadowLabel = txtShadowInput.previousElementSibling;
-const txtShadowResultDisplay = $.querySelector('#txtShadow_result_display');
-const txtShadowColor = $.querySelector('#txtShadow_color');
-const txtShadowClipboard = $.querySelector('#txtShadow_clipboard');
-const txtShadowClipboardTxt =
-  txtShadowClipboard.firstElementChild.firstElementChild;
-const txtShadowSliderRanges = $.querySelectorAll('.txtsh_slider_range');
-
-let [x_txt_sh, y_txt_sh, blur_txt_sh, color_txt_sh] = [40, 35, 12, '#5e81ec'];
 // moving label effect
 txtShadowInput.addEventListener('focus', function () {
   txtShadowLabel.classList.add('active_label');
@@ -414,7 +415,7 @@ txtShadowSliderRanges.forEach((txtShadowSliderRange) => {
     }
   );
 });
-//
+// set and change the text color dynamically
 txtShadowColorPicker.on(['color:init', 'color:change'], function (color) {
   $.querySelector('#txtsh_hex').value = color.hexString;
   $.querySelector('#txtsh_r').value = getRGB(color.rgbString)[0];
@@ -426,4 +427,79 @@ txtShadowColorPicker.on(['color:init', 'color:change'], function (color) {
     'text-shadow: ' +
     `${x_txt_sh}px ${y_txt_sh}px ${blur_txt_sh}px ${color_txt_sh}`;
   hljs.highlightAll();
+});
+// --------------------------------------------------------------- border radius section ------------------------------
+const allSidesBorderSectionTools = $.querySelector('#allSidesBorder_section');
+const eachSideBorderSection = $.querySelector('#eachSideBorder_section');
+const borderMode = $.querySelector('#borderMode');
+const borderSliderRanges = $.querySelectorAll('.border_range');
+const borderResultSample = $.querySelector('#border_result_sample');
+const borderPixelUnit = $.querySelector('#pixel_border_unit');
+const borderPercentUnit = $.querySelector('#pixel_border_unit');
+const borderUnits = $.querySelectorAll('.border_units');
+let borderClipboard =
+  $.querySelector('#border_clipboard').firstElementChild.firstElementChild;
+let [topLeft, topRight, bottomRight, bottomLeft, allSideBorderValue] = [
+  21, 32, 47, 105, 10,
+];
+// change border tools section
+borderMode.addEventListener('change', function () {
+  if (this.value === 'different') {
+    allSidesBorderSectionTools.hidden = true;
+    eachSideBorderSection.hidden = false;
+  } else {
+    allSidesBorderSectionTools.hidden = false;
+    eachSideBorderSection.hidden = true;
+  }
+});
+//
+borderUnits.forEach((borderUnit) => {
+  borderUnit.addEventListener('click', function () {
+    if (this.checked && this.id === 'pixel_border_unit')
+      $.querySelector('#allSidesBorder_input').max = 100;
+    else $.querySelector('#allSidesBorder_input').max = 50;
+  });
+});
+//
+borderSliderRanges.forEach((borderSliderRange) => {
+  borderSliderRange.addEventListener('input', function () {
+    if (this.id === 'allSidesBorder_input') {
+      allSideBorderValue = this.value;
+      if (borderPixelUnit.checked) {
+        borderResultSample.style.borderRadius = `${allSideBorderValue}px`;
+        borderClipboard.innerHTML =
+          'border-radius: ' + `${allSideBorderValue}px`;
+      } else {
+        borderResultSample.style.borderRadius = `${allSideBorderValue}%`;
+        borderClipboard.innerHTML =
+          'border-radius: ' + `${allSideBorderValue}%`;
+      }
+      hljs.highlightAll();
+    } else {
+      if (this.id === 'topLeftBorder_input') {
+        topLeft = this.value;
+      }
+      if (this.id === 'bottomLeftBorder_input') {
+        bottomLeft = this.value;
+      }
+      if (this.id === 'topRightBorder_input') {
+        topRight = this.value;
+      }
+      if (this.id === 'bottomRightBorder_input') {
+        bottomRight = this.value;
+      }
+      if (borderPixelUnit.checked) {
+        borderResultSample.style.borderRadius = `${topLeft}px ${topRight}px ${bottomRight}px ${bottomLeft}px`;
+        borderClipboard.innerHTML =
+          'border-radius: ' +
+          `${topLeft}px ${topRight}px ${bottomRight}px ${bottomLeft}px`;
+      } else {
+        borderResultSample.style.borderRadius = `${topLeft}% ${topRight}% ${bottomRight}% ${bottomLeft}%`;
+        borderClipboard.innerHTML =
+          'border-radius: ' +
+          `${topLeft}% ${topRight}% ${bottomRight}% ${bottomLeft}%`;
+      }
+      hljs.highlightAll();
+    }
+  });
 });

@@ -205,6 +205,15 @@ input[type=number] {
   left: 17px !important;
 }
 
+#border_page #border_result_display #border_result_sample {
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  border-radius: 10px 10px 10px 10px;
+}
+#border_page #border_tools #units label {
+  cursor: pointer;
+}
 #title_section #magic_stick {
   top: -6px;
   left: 57%;
@@ -361,4 +370,13 @@ input[type=number] {
 #gd__ColorInfo__left label:nth-of-type(1), #txtShadow__ColorInfo input:nth-of-type(1),
 #txtShadow__ColorInfo label:nth-of-type(1) {
   width: 80px;
+}
+
+select {
+  border-radius: 1px;
+  cursor: pointer;
+  outline: 0;
+  background-color: #4169e1;
+  color: #f5f5f5;
+  border: 1px solid #4169e1;
 }/*# sourceMappingURL=style.css.map */

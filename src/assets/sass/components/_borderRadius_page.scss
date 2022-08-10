@@ -1,0 +1,23 @@
+#border_page{
+    #border_result_display{
+        #border_result_sample{
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            border-radius: 10px 10px 10px 10px;
+        }
+        #border_clipboard{
+
+        }
+    }
+    #border_tools{
+        #units{
+             label {
+                 cursor: pointer;
+            }
+        }
+        #borderMode{
+
+        }
+    }
+}

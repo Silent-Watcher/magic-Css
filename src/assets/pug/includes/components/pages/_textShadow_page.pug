@@ -1,5 +1,5 @@
-.container#txtShadow_page.page.d-flex.flex-column.justify-content-center
-    .row 
+.container#txtShadow_page.page(hidden)
+    .row.mt-5
         section#txtShadow_input.text-center.col-2.offset-5.mt-5.position-relative
             label(for="txt_sh_input").position-absolute Text
             input#txt_sh_input(type="text").w-100.h-100
@@ -48,7 +48,7 @@
     .row 
         section#txtShadow_clipboard.position-relative.col-4.offset-4.mt-5.text-center
                 pre
-                    code  background: linear-gradient(24deg, rgb(68, 9, 9), rgb(37, 172, 165));
+                    code  text-shadow: #5e81ec 0px 0px 0px;;
                 button.copyToClipboardBtn.p-2.btn.btn-lg.border-0#copytxtShadow.position-absolute
                     i.fa-solid.fa-clipboard-list 
 

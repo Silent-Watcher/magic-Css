@@ -168,8 +168,8 @@
         </section>
       </div>
     </div>
-    <div class="container page d-flex flex-column justify-content-center" id="txtShadow_page">
-      <div class="row"> 
+    <div class="container page" id="txtShadow_page" hidden>
+      <div class="row mt-5">
         <section class="text-center col-2 offset-5 mt-5 position-relative" id="txtShadow_input">
           <label class="position-absolute" for="txt_sh_input">Text</label>
           <input class="w-100 h-100" id="txt_sh_input" type="text">
@@ -225,8 +225,76 @@
       </div>
       <div class="row"> 
         <section class="position-relative col-4 offset-4 mt-5 text-center" id="txtShadow_clipboard">
-          <pre><code> background: linear-gradient(24deg, rgb(68, 9, 9), rgb(37, 172, 165));</code></pre>
+          <pre><code> text-shadow: #5e81ec 0px 0px 0px;;</code></pre>
           <button class="copyToClipboardBtn p-2 btn btn-lg border-0 position-absolute" id="copytxtShadow"><i class="fa-solid fa-clipboard-list"> </i></button>
+        </section>
+      </div>
+    </div>
+    <div class="container page d-flex flex-column justify-content-center" id="border_page">
+      <div class="row"> 
+        <section class="col-6 d-flex justify-content-center align-items-center flex-column" id="border_tools">
+          <select id="borderMode">
+            <option value="same">Same on all sides</option>
+            <option value="different">different on all sides</option>
+          </select>
+          <section class="mt-5" id="allSidesBorder_section">
+            <p class="mb-0 fs-5">Radius</p>
+            <div class="slider_range justify-content-start">
+              <div class="wrapper_slider"><span class="navigator">0</span>
+                <input class="slider_range_input border_range" id="allSidesBorder_input" type="range" min="0" max="100" value="0">
+              </div>
+            </div>
+          </section>
+          <section class="mt-5" id="eachSideBorder_section" hidden>
+            <div class="row"> 
+              <div class="col-6">
+                <p class="mb-0 fs-5">Top-left</p>
+                <div class="slider_range justify-content-start">
+                  <div class="wrapper_slider"><span class="navigator">0</span>
+                    <input class="slider_range_input border_range" id="topLeftBorder_input" type="range" min="0" max="100" value="0">
+                  </div>
+                </div>
+                <p class="mb-0 fs-5">Bottom-left</p>
+                <div class="slider_range justify-content-start">
+                  <div class="wrapper_slider"><span class="navigator">0</span>
+                    <input class="slider_range_input border_range" id="bottomLeftBorder_input" type="range" min="0" max="100" value="0">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6"> 
+                <p class="mb-0 fs-5">Top-right</p>
+                <div class="slider_range justify-content-start">
+                  <div class="wrapper_slider"><span class="navigator">0</span>
+                    <input class="slider_range_input border_range" id="topRightBorder_input" type="range" min="0" max="100" value="0">
+                  </div>
+                </div>
+                <p class="mb-0 fs-5">Bottom-right</p>
+                <div class="slider_range justify-content-start">
+                  <div class="wrapper_slider"><span class="navigator">0</span>
+                    <input class="slider_range_input border_range" id="bottomRightBorder_input" type="range" min="0" max="100" value="0">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="units">
+            <p>Unit </p>
+            <div class="unit_wrapper"> 
+              <input class="border_units" id="pixel_border_unit" type="radio" name="units" checked>
+              <label for="pixel_border_unit">PX</label>
+            </div>
+            <div class="unit_wrapper"> 
+              <input class="border_units" id="percent_border_unit" type="radio" name="units">
+              <label for="percent_border_unit">%</label>
+            </div>
+          </section>
+        </section>
+        <section class="col-6 d-flex justify-content-center align-items-center flex-column" id="border_result_display">
+          <section id="border_result_sample"> </section>
+          <section class="position-relative mt-5 text-center" id="border_clipboard">
+            <pre><code>border-radius: 10px 10px 10px 10px;</code></pre>
+            <button class="copyToClipboardBtn p-2 btn btn-lg border-0 position-absolute" id="copyBorder"><i class="fa-solid fa-clipboard-list"> </i></button>
+          </section>
         </section>
       </div>
     </div>
