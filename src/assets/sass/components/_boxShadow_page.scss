@@ -1,0 +1,37 @@
+#boxShadowMagic__page {
+    #boxShadowMagic_tools {
+      #color_boxShadow {
+        #bxsh_colorPalette {
+          display: flex;
+          .color {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            border-radius: 4px;
+            display: inline-block;
+          }
+        }
+      }
+    }
+    #boxShadowMagic_result {
+      #bxsh_result_display{
+        font-size: 16px;
+      }
+      #boxShadowMagic_sample {
+        margin-top: 200px;
+        width: 150px;
+        height: 150px;
+        background-color: #ccc;
+      }
+    }
+  }
+  
+  //
+  #bxsh_inset_input {
+    accent-color: #7ed321;
+    + label {
+      cursor: pointer;
+      font-size: 16px;
+    }
+  }

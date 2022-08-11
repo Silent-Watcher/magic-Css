@@ -108,7 +108,7 @@ bxshResultDisplay.firstElementChild.firstElementChild.innerHTML =
 // navbar animation
 [...menu.children].forEach((menuItem) => {
   menuItem.addEventListener('click', function () {
-    light.style.left = `${menuItem.offsetLeft + light.offsetWidth / 3}px`;
+    light.style.left = `${menuItem.offsetLeft + light.offsetWidth / 4}px`;
     menuItem.firstElementChild.classList.add('active', 'text-primary');
     siblings(menuItem).forEach((sibling) => {
       sibling.firstElementChild.classList.remove('active', 'text-primary');
@@ -128,42 +128,15 @@ rangeSliders.forEach((rangeSlider) => {
     this.previousElementSibling.classList.remove('show_range_slider');
   });
 });
-// range slide value change detect for box shadows
-bxshSliderRanges.forEach((bxshSliderRange) => {
-  bxshSliderRange.firstElementChild.nextElementSibling.lastElementChild.addEventListener(
-    'change',
-    function () {
-      if (this.id === 'x_bxsh') {
-        xBxsh = this.value;
-        bxshBox.style.boxShadow = `${this.value}px ${yBxsh}px ${blurBxsh}px ${spreadBxsh}px #000`;
-      }
-      if (this.id === 'y_bxsh') {
-        yBxsh = this.value;
-        bxshBox.style.boxShadow = `${xBxsh}px ${this.value}px ${blurBxsh}px ${spreadBxsh}px #000`;
-      }
-      if (this.id === 'blur_bxsh') {
-        blurBxsh = this.value;
-        bxshBox.style.boxShadow = `${xBxsh}px ${yBxsh}px ${this.value}px ${spreadBxsh}px #000`;
-      }
-      if (this.id === 'spread_bxsh') {
-        spreadBxsh = this.value;
-        bxshBox.style.boxShadow = `${xBxsh}px ${yBxsh}px ${blurBxsh}px ${this.value}px #000`;
-      }
-      bxshResultDisplay.firstElementChild.firstElementChild.innerHTML =
-        bxshBox.style.boxShadow;
-      hljs.highlightAll();
-    }
-  );
-});
-//
 // detect color change magic box shadow
 boxShadowSliderPicker.on(['color:init', 'color:change'], (color) => {
   // Show the current color in different formats
+  colorBxsh = color.hexString;
   $.querySelector('#bxsh_hex').value = color.hexString;
   $.querySelector('#bxsh_r').value = getRGB(color.rgbString)[0];
   $.querySelector('#bxsh_g').value = getRGB(color.rgbString)[1];
   $.querySelector('#bxsh_b').value = getRGB(color.rgbString)[2];
-  bxshBox.style.boxShadow = `${xBxsh}px ${yBxsh}px ${blurBxsh}px ${spreadBxsh}px ${color.hexString}`;
+  bxshBox.style.boxShadow = `${xBxsh}px ${yBxsh}px ${blurBxsh}px ${spreadBxsh}px ${colorBxsh}`;
   bxshResultDisplay.firstElementChild.firstElementChild.innerHTML =
     bxshBox.style.boxShadow;
   hljs.highlightAll();
@@ -175,6 +148,35 @@ boxShadowSliderPicker.on(['color:init', 'color:change'], (color) => {
     });
   }
 );
+// range slide value change detect for box shadows
+bxshSliderRanges.forEach((bxshSliderRange) => {
+  bxshSliderRange.firstElementChild.nextElementSibling.lastElementChild.addEventListener(
+    'change',
+    function () {
+      if (this.id === 'x_bxsh') {
+        xBxsh = this.value;
+        bxshBox.style.boxShadow = `${this.value}px ${yBxsh}px ${blurBxsh}px ${spreadBxsh}px ${colorBxsh}`;
+      }
+      if (this.id === 'y_bxsh') {
+        yBxsh = this.value;
+        bxshBox.style.boxShadow = `${xBxsh}px ${this.value}px ${blurBxsh}px ${spreadBxsh}px ${colorBxsh}`;
+      }
+      if (this.id === 'blur_bxsh') {
+        blurBxsh = this.value;
+        bxshBox.style.boxShadow = `${xBxsh}px ${yBxsh}px ${this.value}px ${spreadBxsh}px ${colorBxsh}`;
+      }
+      if (this.id === 'spread_bxsh') {
+        spreadBxsh = this.value;
+        bxshBox.style.boxShadow = `${xBxsh}px ${yBxsh}px ${blurBxsh}px ${this.value}px ${colorBxsh}`;
+      }
+      bxshResultDisplay.firstElementChild.firstElementChild.innerHTML =
+        bxshBox.style.boxShadow;
+      hljs.highlightAll();
+    }
+  );
+});
+//
+
 // ------------------copy to clipboard functionality ------------
 let copyToClipBoardBtns = $.querySelectorAll('.copyToClipboardBtn');
 copyToClipBoardBtns.forEach((copyToClipBoardBtn) => {
@@ -503,3 +505,26 @@ borderSliderRanges.forEach((borderSliderRange) => {
     }
   });
 });
+// --------------------------------------------------------------- page transition animation ------------------------------
+const pages = [...$.querySelector('#pages').children];
+const bxsh_page = $.querySelector('#boxShadowMagic__page');
+const txtSh_page = $.querySelector('#txtShadow_page');
+const gradient_page = $.querySelector('#gradient_page');
+const border_page = $.querySelector('#border_page');
+
+[...menu.children].forEach((menuItem) => {
+  menuItem.addEventListener('click', function () {
+    if (this.dataset.target === 'bxSh_page_menu') changePageTo(bxsh_page);
+    if (this.dataset.target === 'txtSh_page_menu') changePageTo(txtSh_page);
+    if (this.dataset.target === 'gradient_page_menu') changePageTo(gradient_page);
+    if (this.dataset.target === 'border_page_menu') changePageTo(border_page);
+  });
+});
+
+function changePageTo(page) {
+  page.classList.add('appearPage');
+  siblings(page).map((sibling) => {
+    if (sibling.classList.contains('appearPage'))
+      sibling.classList.remove('appearPage');
+  });
+}

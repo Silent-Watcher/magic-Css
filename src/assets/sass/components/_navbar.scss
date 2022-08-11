@@ -1,0 +1,61 @@
+// -----------
+#menu {
+    background-color: #bdbdbd8e;
+    #menu_list {
+      list-style: none;
+      .menu__item {
+        cursor: pointer;
+        color: #222222;
+        > i {
+        }
+      }
+    }
+    #tubeLight {
+      height: 5px;
+      width: 45px;
+      display: block;
+      background-color: #5e81ec;
+      top: 0;
+      left: 40px;
+      transform: translateX(50%);
+      transition: left 0.5s;
+      #light {
+        position: absolute;
+        width: 160%;
+        height: 60px;
+        background: linear-gradient(
+          to bottom,
+          #5e81ec60 50%,
+          rgba(255, 255, 255, 0) 98%
+        );
+        clip-path: polygon(19% 0, 80% 0%, 100% 100%, 0% 100%);
+        left: -30%;
+        top: 5px;
+      }
+    }
+  }
+  
+  .active {
+    animation: show 0.7s;
+  }
+  @keyframes show {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    40% {
+      opacity: 0.5;
+    }
+    60% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  //

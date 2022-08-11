@@ -1,0 +1,13 @@
+#gd__ColorInfo__right, #gd__ColorInfo__left,#txtShadow__ColorInfo,#boxShadow__ColorInfo{
+    input,
+    label {
+      outline: 0;
+      text-align: center;
+      font-size: 12px;
+      width: 50px;
+      &:nth-of-type(1) {
+        width: 80px;
+      }
+    }
+  }
+  

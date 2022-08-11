@@ -1,0 +1,19 @@
+.page{
+    height: calc(100vh - 150px);
+    left: 0;
+    right: 0;
+    background-color: #f5f5f5;
+  }
+  .appearPage{
+    top: initial!important;
+    z-index: 2!important;
+  }
+  .page2{
+    top: 100vh;
+  }
+  .page3{
+    top: 200vh;
+  }
+  .page4{
+    top: 300vh;
+  }
