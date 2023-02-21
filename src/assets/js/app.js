@@ -1,14 +1,14 @@
 'use strict';
 // bxsh stands for box-shadow
 let $ = document;
-const menu = $.querySelector('#menu_list');
-const light = menu.nextElementSibling;
-const sliders = $.querySelectorAll('.rangeSliders');
-const bxshBox = $.querySelector('#boxShadowMagic_sample');
-const bxshResultDisplay = $.querySelector('#bxsh_result_display');
-const bxshResultBtn = bxshResultDisplay.lastElementChild;
-const gdColorInfoRight = $.querySelector('#gd__ColorInfo__right');
-const gdColorInfoLeft = $.querySelector('#gd__ColorInfo__left');
+const menu = $.querySelector('#menu_list'),
+ light = menu.nextElementSibling,
+ sliders = $.querySelectorAll('.rangeSliders'),
+ bxshBox = $.querySelector('#boxShadowMagic_sample'),
+ bxshResultDisplay = $.querySelector('#bxsh_result_display'),
+ bxshResultBtn = bxshResultDisplay.lastElementChild,
+ gdColorInfoRight = $.querySelector('#gd__ColorInfo__right'),
+ gdColorInfoLeft = $.querySelector('#gd__ColorInfo__left');
 //
 let bxshSliderRanges = $.querySelectorAll('.bxsh_slider_range');
 let [xBxsh, yBxsh, blurBxsh, spreadBxsh, colorBxsh] = [0, 0, 0, 0, '#5e81ec'];
