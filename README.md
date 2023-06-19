@@ -35,7 +35,7 @@
 
 Experience the convenience and power of the CSS Value Generator by visiting the demo page and start creating stunning CSS effects effortlessly.
 
-You can try out the Timer by following this [demo link.]()
+You can try out the Timer by following this [demo link.](https://magic-css.netlify.app/)
 
 ## Prerequisites
 
