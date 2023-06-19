@@ -1,5 +1,5 @@
 
-![timer.js banner](https://github.com/Silent-Watcher/magic-Css/blob/master/src/assets/img/banner.png)
+![magic css](https://github.com/Silent-Watcher/magic-Css/blob/master/public/img/banner.png)
 
 # Magic CSS 🧙‍♂️
 
