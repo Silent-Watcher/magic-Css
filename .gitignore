@@ -167,3 +167,5 @@ dist
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode
+# Local Netlify folder
+.netlify
