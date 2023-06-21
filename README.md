@@ -112,7 +112,7 @@ yarn dev
 
 - **Open Source**: The app is open source, allowing you to explore the codebase, contribute improvements, or customize it to suit your specific needs.
 
-## Contributing
+## Contributing 🤝🏾
 
 Contributions to this project are welcome. 
 If you encounter any issues or have suggestions for improvement, please open an issue on the GitHub repository.
