@@ -128,7 +128,7 @@ For additional information or inquiries, you can reach out to the project mainta
 
 Feel free to contact the maintainer for any questions or feedback regarding the project.
 
-## License
+## License 🔐
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
